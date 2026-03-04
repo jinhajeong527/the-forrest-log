@@ -1,0 +1,246 @@
+# Product Requirements Document
+# My Forrest Yoga Log — MVP
+
+**Version:** 1.0  
+**Date:** March 2026  
+**Status:** Draft
+
+---
+
+## 1. Overview
+
+### 1.1 Product Summary
+
+My Forrest Yoga Log is a practice tracking web app for Forrest Yoga practitioners. It reflects the unique characteristics of Forrest Yoga — peak poses, sequence structure, and the 4 Pillars philosophy — and provides a visual pose tarot card library that can be used both for exploration and for logging practice sessions.
+
+### 1.2 Goals
+
+- Provide a personal log to record and review Forrest Yoga practice sessions
+- Implement an intuitive UX for logging sequences using pose tarot cards
+- Ship a working product within MVP scope quickly
+
+### 1.3 Target Users
+
+- Individual Forrest Yoga practitioners
+- Yoga students who want to track their practice and growth over time
+
+---
+
+## 2. Tech Stack
+
+| Area | Technology |
+|------|------------|
+| Framework | Next.js (App Router) |
+| Language | TypeScript |
+| Database | Supabase (PostgreSQL) |
+| ORM | Prisma |
+| Auth | Supabase Auth |
+| Deployment | Vercel |
+| Styling | shadcn/ui (Radix UI + Tailwind CSS)
+---
+
+## 3. MVP Scope
+
+The MVP consists of two core features:
+
+1. **Practice Log** (including Sequence Log)
+2. **Pose Library** (tarot card style)
+
+---
+
+## 4. Functional Requirements
+
+### 4.1 Authentication
+
+- Email / social login via Supabase Auth
+- All pages require authentication — unauthenticated users are redirected to `/login`
+
+---
+
+### 4.2 Practice Log
+
+#### 4.2.1 Log List Page
+
+- Display practice logs in reverse chronological order
+- Show date, theme, and peak pose for each entry
+- Provide a button to create a new log
+
+#### 4.2.2 Create Log
+
+The following fields are available when creating a practice log:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| Date | Date | Yes | Date of practice |
+| Class Theme | Text | No | e.g. Hip Opening, Backbends, Inversions |
+| Peak Pose | Pose select | No | Selected from Pose Library |
+| Condition Before | 1–5 scale | No | Physical condition before class |
+| Condition After | 1–5 scale | No | Physical condition after class |
+| Emotion / Energy | Text | No | Free text |
+| 4 Pillars | Multi-select | No | Breath / Strength / Integrity / Spirit |
+| Notes | Textarea | No | Free memo |
+| Sequence Log | Pose list | No | See 4.2.3 |
+
+#### 4.2.3 Sequence Log
+
+A nested record within the practice log.
+
+- Add poses to the sequence by selecting from the Pose Library
+- Reorder poses via drag and drop
+- Each pose entry supports the following fields:
+
+| Field | Type | Required |
+|-------|------|----------|
+| Pose | Pose select | Yes |
+| Hold Duration | Number (seconds) | No |
+| Difficulty | 1–5 scale | No |
+| Notes | Text | No |
+
+#### 4.2.4 Log Detail Page
+
+- View all content of a saved practice log
+- If a sequence log exists, display poses as tarot cards in order
+- Edit and delete actions available
+
+---
+
+### 4.3 Pose Library
+
+#### 4.3.1 Pose List Page
+
+- Display all poses as tarot cards in a grid layout
+- Filter by category
+
+| Category |
+|----------|
+| Abdominals |
+| Backbends |
+| Balancing Poses |
+| Inversions |
+| Standing Poses |
+| Arm Balances |
+| Lunges |
+
+#### 4.3.2 Pose Card
+
+Each pose card displays the following:
+
+| Field | Description |
+|-------|-------------|
+| Pose Name | e.g. Side Crow |
+| Sanskrit Name | e.g. Parsva Bakasana |
+| Category | One of the categories above |
+| Tarot Card Image | Pose illustration |
+| Description | 1–2 line summary of the pose |
+
+#### 4.3.3 Initial Pose Data
+
+Default poses to seed for MVP (focused on core Forrest Yoga poses):
+
+| Pose Name | Category |
+|-----------|----------|
+| Crow Pose | Arm Balances |
+| Side Crow | Arm Balances |
+| Headstand | Inversions |
+| Forearm Stand | Inversions |
+| Wheel Pose | Backbends |
+| Camel Pose | Backbends |
+| Dancer Pose | Balancing Poses |
+| Turbo Dog | Inversions |
+| Dolphin Pose | Inversions |
+| Standing Split | Balancing Poses |
+
+---
+
+## 5. Database Schema
+
+### poses
+
+```sql
+poses
+- id: uuid (PK)
+- name: text
+- sanskrit_name: text
+- category: text
+- description: text
+- image_url: text
+- created_at: timestamp
+```
+
+### practice_logs
+
+```sql
+practice_logs
+- id: uuid (PK)
+- user_id: uuid (FK → auth.users)
+- date: date
+- theme: text
+- peak_pose_id: uuid (FK → poses, nullable)
+- condition_before: integer (1–5)
+- condition_after: integer (1–5)
+- emotion: text
+- pillars: text[] (array of selected pillars)
+- notes: text
+- created_at: timestamp
+- updated_at: timestamp
+```
+
+### sequence_logs
+
+```sql
+sequence_logs
+- id: uuid (PK)
+- practice_log_id: uuid (FK → practice_logs)
+- pose_id: uuid (FK → poses)
+- order: integer
+- hold_seconds: integer (nullable)
+- difficulty: integer (1–5, nullable)
+- notes: text (nullable)
+- created_at: timestamp
+```
+
+---
+
+## 6. Page Structure
+
+```
+/                         → Home (landing / login redirect)
+/login                    → Login
+/log                      → Practice log list
+/log/new                  → Create practice log
+/log/[id]                 → Practice log detail
+/log/[id]/edit            → Edit practice log
+/poses                    → Pose library
+```
+
+---
+
+## 7. Non-Functional Requirements
+
+- Mobile responsive (users will likely log sessions on mobile right after class)
+- Supabase RLS (Row Level Security) applied — users can only access their own logs
+
+---
+
+## 8. Out of Scope for MVP
+
+The following features are excluded from MVP and will be considered in future versions:
+
+- Calendar / streak view
+- Peak pose history & statistics
+- Custom pose creation
+- Social sharing
+- Dark / light theme toggle
+
+---
+
+## 9. Milestones
+
+| Phase | Description |
+|-------|-------------|
+| Phase 1 | Project setup (Next.js + Supabase + Vercel) |
+| Phase 2 | Auth integration + RLS + middleware route protection |
+| Phase 3 | Pose library (DB seed + card UI) |
+| Phase 4 | Practice log CRUD |
+| Phase 5 | Sequence log (pose selection + reordering) |
+| Phase 6 | Mobile responsive polish + deployment |
