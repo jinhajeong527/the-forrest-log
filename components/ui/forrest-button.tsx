@@ -1,7 +1,7 @@
-import { Button, type ButtonProps } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-export function ForrestButton({ className, ...props }: ButtonProps) {
+export function ForrestButton({ className, ...props }: React.ComponentProps<typeof Button>) {
   return (
     <Button
       className={cn(
