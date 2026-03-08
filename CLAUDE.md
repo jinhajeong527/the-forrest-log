@@ -7,11 +7,19 @@ Users can log their practice sessions, build sequences using a tarot card-style 
 
 ---
 
+## Conventions
+
+### Zod
+- Import from `"zod/v4"`, not `"zod"`
+- Always check the [Zod v4 changelog](https://zod.dev/v4) before using any method — avoid deprecated APIs
+
+---
+
 ## Tech Stack
 
 | Area | Technology |
 |------|------------|
-| Framework | Next.js 15 (App Router) |
+| Framework | Next.js 16 (App Router) |
 | Language | TypeScript |
 | Database | Supabase (PostgreSQL) |
 | ORM | Prisma |

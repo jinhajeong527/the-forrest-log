@@ -1,0 +1,20 @@
+import { type NextRequest } from "next/server";
+import "@/lib/env"; // validate env vars at startup
+import { updateSession } from "@/lib/supabase/middleware";
+
+export async function proxy(request: NextRequest) {
+  return await updateSession(request);
+}
+
+// NOTE: See https://nextjs.org/docs/app/api-reference/file-conventions/proxy#matcher
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization)
+     * - favicon.ico, and static assets
+     */
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+  ],
+};
