@@ -9,6 +9,39 @@ Users can log their practice sessions, build sequences using a tarot card-style 
 
 ## Conventions
 
+### UI / Components
+- When implementing UI components or pages, invoke the `the-forrest-log-design` skill first
+  to ensure consistency with the design system
+
+### Architecture Decisions
+- When significant architectural decisions are made during planning, document them
+  as ADR files in `docs/decisions/`. Format: title, status, decision, reason, rejected alternatives.
+
+### Validation
+- Always validate at both layers for data integrity constraints (e.g., numeric ranges):
+  - **Zod** (app level) — user-facing error messages
+  - **DB CHECK constraint** — defense against direct DB access that bypasses the app
+- Prisma does not support defining CHECK constraints in schema.prisma.
+  When CHECK constraints are required, create a migration with
+  `pnpm prisma migrate dev --create-only` and add the SQL constraint
+  directly in the generated migration.sql file so it remains tracked in git.
+
+### Tailwind CSS
+- Pseudo-element rules (e.g., `::before`, `::after`, `::-webkit-scrollbar`) cannot be nested
+  inside `@utility` blocks — Tailwind v4 does not process them correctly there.
+  Define pseudo-element rules as separate global CSS rules:
+  ```css
+  /* ✅ correct */
+  @utility scrollbar-none { scrollbar-width: none; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+
+  /* ❌ avoid — pseudo-element is silently dropped */
+  @utility scrollbar-none {
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+  ```
+
 ### Zod
 - Import from `"zod/v4"`, not `"zod"`
 - Always check the [Zod v4 changelog](https://zod.dev/v4) before using any method — avoid deprecated APIs

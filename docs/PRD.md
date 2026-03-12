@@ -76,8 +76,7 @@ The following fields are available when creating a practice log:
 | Peak Pose | Pose select | No | Selected from Pose Library |
 | Condition Before | 1–5 scale | No | Physical condition before class |
 | Condition After | 1–5 scale | No | Physical condition after class |
-| Emotion / Energy | Text | No | Free text |
-| 4 Pillars | Multi-select | No | Breath / Strength / Integrity / Spirit |
+| Props Used | Multi-select | No | FOAM_ROLLER / KNEE_PAD / BLOCK / STRAP / BOLSTER / BLANKET |
 | Notes | Textarea | No | Free memo |
 | Sequence Log | Pose list | No | See 4.2.3 |
 
@@ -92,8 +91,7 @@ A nested record within the practice log.
 | Field | Type | Required |
 |-------|------|----------|
 | Pose | Pose select | Yes |
-| Hold Duration | Number (seconds) | No |
-| Difficulty | 1–5 scale | No |
+| Order | Integer | Yes (drag & drop) |
 | Notes | Text | No |
 
 #### 4.2.4 Log Detail Page
@@ -114,12 +112,14 @@ A nested record within the practice log.
 | Category |
 |----------|
 | Abdominals |
+| Arm Balances |
 | Backbends |
 | Balancing Poses |
+| Hip Openers |
 | Inversions |
-| Standing Poses |
-| Arm Balances |
 | Lunges |
+| Restorative |
+| Standing Poses |
 
 #### 4.3.2 Pose Card
 
@@ -129,7 +129,8 @@ Each pose card displays the following:
 |-------|-------------|
 | Pose Name | e.g. Side Crow |
 | Sanskrit Name | e.g. Parsva Bakasana |
-| Category | One of the categories above |
+| Categories | One or more of the categories above |
+| Level | BEGINNER / INTERMEDIATE / ADVANCED |
 | Tarot Card Image | Pose illustration |
 | Description | 1–2 line summary of the pose |
 
@@ -137,18 +138,18 @@ Each pose card displays the following:
 
 Default poses to seed for MVP (focused on core Forrest Yoga poses):
 
-| Pose Name | Category |
-|-----------|----------|
-| Crow Pose | Arm Balances |
-| Side Crow | Arm Balances |
-| Headstand | Inversions |
-| Forearm Stand | Inversions |
-| Wheel Pose | Backbends |
-| Camel Pose | Backbends |
-| Dancer Pose | Balancing Poses |
-| Turbo Dog | Inversions |
-| Dolphin Pose | Inversions |
-| Standing Split | Balancing Poses |
+| Pose Name | Categories | Level |
+|-----------|------------|-------|
+| Crow Pose | Arm Balances, Balancing Poses | Intermediate |
+| Side Crow | Arm Balances, Balancing Poses | Advanced |
+| Headstand | Inversions, Balancing Poses | Advanced |
+| Forearm Stand | Inversions, Arm Balances | Advanced |
+| Turbo Dog | Inversions | Intermediate |
+| Dolphin Pose | Inversions | Beginner |
+| Wheel Pose | Backbends | Intermediate |
+| Camel Pose | Backbends | Intermediate |
+| Dancer Pose | Balancing Poses, Standing Poses | Intermediate |
+| Standing Split | Balancing Poses, Standing Poses | Intermediate |
 
 ---
 
@@ -160,11 +161,17 @@ Default poses to seed for MVP (focused on core Forrest Yoga poses):
 poses
 - id: uuid (PK)
 - name: text
-- sanskrit_name: text
-- category: text
-- description: text
-- image_url: text
+- sanskrit_name: text (nullable)
+- categories: PoseCategory[] (enum array)
+- level: PoseLevel (enum, default: BEGINNER)
+- description: text (nullable)
+- image_url: text (nullable)
 - created_at: timestamp
+- updated_at: timestamp
+
+enum PoseCategory: ABDOMINALS | ARM_BALANCES | BACKBENDS | BALANCING_POSES |
+                   HIP_OPENERS | INVERSIONS | LUNGES | RESTORATIVE | STANDING_POSES
+enum PoseLevel: BEGINNER | INTERMEDIATE | ADVANCED
 ```
 
 ### practice_logs
@@ -174,15 +181,16 @@ practice_logs
 - id: uuid (PK)
 - user_id: uuid (FK → auth.users)
 - date: date
-- theme: text
+- theme: text (nullable)
 - peak_pose_id: uuid (FK → poses, nullable)
-- condition_before: integer (1–5)
-- condition_after: integer (1–5)
-- emotion: text
-- pillars: text[] (array of selected pillars)
-- notes: text
+- condition_before: integer (1–5, nullable, CHECK constraint)
+- condition_after: integer (1–5, nullable, CHECK constraint)
+- props: Prop[] (enum array, default: [])
+- notes: text (nullable)
 - created_at: timestamp
 - updated_at: timestamp
+
+enum Prop: FOAM_ROLLER | KNEE_PAD | BLOCK | STRAP | BOLSTER | BLANKET
 ```
 
 ### sequence_logs
@@ -193,10 +201,11 @@ sequence_logs
 - practice_log_id: uuid (FK → practice_logs)
 - pose_id: uuid (FK → poses)
 - order: integer
-- hold_seconds: integer (nullable)
-- difficulty: integer (1–5, nullable)
 - notes: text (nullable)
 - created_at: timestamp
+- updated_at: timestamp
+
+index: (practice_log_id, order)
 ```
 
 ---
