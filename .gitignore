@@ -42,3 +42,8 @@ next-env.d.ts
 
 # http client
 http-client.env.json
+
+/lib/generated/prisma
+
+# ide
+.idea/
