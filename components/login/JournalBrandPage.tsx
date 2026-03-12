@@ -1,4 +1,4 @@
-import LogoMark from "./LogoMark";
+import LogoMark from "@/components/LogoMark";
 import TarotCardFrame from "./TarotCardFrame";
 
 export default function JournalBrandPage() {
@@ -13,7 +13,12 @@ export default function JournalBrandPage() {
         <path d="M20 78 C20 78, 10 56, 16 40 C20 28, 26 22, 20 8 C24 22, 22 40, 26 56 C28 66, 20 78, 20 78Z" fill="currentColor" opacity="0.6"/>
       </svg>
 
-      <LogoMark />
+      <div className="flex flex-col items-center gap-1">
+        <LogoMark />
+        <p className="mt-3 font-cormorant italic text-muted-foreground text-sm tracking-wide">
+          Return to your mat.
+        </p>
+      </div>
 
       {/* Tarot card + copy */}
       <div className="flex items-start gap-5">
