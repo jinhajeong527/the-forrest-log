@@ -20,15 +20,16 @@ export default function LogoMark() {
         </div>
 
         {/* Main title */}
-        <h1 className="font-cormorant font-semibold italic text-foreground tracking-wide">
+        <p className="font-cormorant font-semibold text-foreground tracking-wide">
           <span className="block text-4xl leading-none">Forrest</span>
           <span className="block text-4xl leading-tight">Log</span>
-        </h1>
+        </p>
 
         {/* Botanical leaves — left */}
         <svg
           className="absolute -left-10 top-4 text-[oklch(0.48_0.07_120)] opacity-70"
           width="32" height="40" viewBox="0 0 32 40" fill="none"
+          aria-hidden="true"
         >
           <path d="M16 38 C16 38, 2 28, 4 16 C6 8, 14 4, 16 2 C14 12, 8 18, 16 38Z" fill="currentColor" opacity="0.5"/>
           <path d="M16 38 C16 38, 6 24, 10 14 C13 7, 18 5, 16 2 C18 12, 14 22, 16 38Z" fill="currentColor" opacity="0.35"/>
@@ -38,16 +39,12 @@ export default function LogoMark() {
         <svg
           className="absolute -right-10 top-4 text-[oklch(0.48_0.07_120)] opacity-70 scale-x-[-1]"
           width="32" height="40" viewBox="0 0 32 40" fill="none"
+          aria-hidden="true"
         >
           <path d="M16 38 C16 38, 2 28, 4 16 C6 8, 14 4, 16 2 C14 12, 8 18, 16 38Z" fill="currentColor" opacity="0.5"/>
           <path d="M16 38 C16 38, 6 24, 10 14 C13 7, 18 5, 16 2 C18 12, 14 22, 16 38Z" fill="currentColor" opacity="0.35"/>
         </svg>
       </div>
-
-      {/* Tagline */}
-      <p className="mt-3 font-cormorant italic text-muted-foreground text-sm tracking-wide">
-        Return to your mat.
-      </p>
     </div>
   );
 }
