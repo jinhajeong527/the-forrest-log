@@ -21,10 +21,29 @@ Users can log their practice sessions, build sequences using a tarot card-style 
 - Always validate at both layers for data integrity constraints (e.g., numeric ranges):
   - **Zod** (app level) — user-facing error messages
   - **DB CHECK constraint** — defense against direct DB access that bypasses the app
-- Prisma does not support defining CHECK constraints in schema.prisma.
-  When CHECK constraints are required, create a migration with
-  `pnpm prisma migrate dev --create-only` and add the SQL constraint
-  directly in the generated migration.sql file so it remains tracked in git.
+
+### Migrations (raw SQL)
+Prisma does not support raw SQL features in `schema.prisma` (CHECK constraints, RLS policies, triggers, etc.).
+When raw SQL is required, use `--create-only` to generate an empty migration file, add the SQL manually, then apply:
+
+```bash
+pnpm prisma migrate dev --create-only --name <description>
+# edit the generated migration.sql, then:
+pnpm prisma migrate dev
+```
+
+Common cases and examples:
+
+```sql
+-- CHECK constraint (e.g. conditionBefore/After must be 1–5)
+ALTER TABLE "practice_logs"
+  ADD CONSTRAINT "condition_before_range" CHECK (condition_before BETWEEN 1 AND 5);
+
+-- RLS policy (e.g. users can only access their own logs)
+ALTER TABLE practice_logs ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "practice_logs_own" ON practice_logs
+  FOR ALL USING (user_id = auth.uid());
+```
 
 ### Tailwind CSS
 - Pseudo-element rules (e.g., `::before`, `::after`, `::-webkit-scrollbar`) cannot be nested
