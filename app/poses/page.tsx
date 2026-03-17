@@ -38,7 +38,7 @@ export default async function PosesPage({ searchParams }: PageProps) {
       ? { categories: { has: activeCategory } }
       : undefined,
     select: { id: true, name: true, imageUrl: true },
-    orderBy: { name: "asc" },
+    orderBy: { imageUrl: "asc" },
   });
 
   return (
