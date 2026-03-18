@@ -27,6 +27,13 @@ const poses = [
     level: PoseLevel.BEGINNER,
     imageUrl: "/pose-images/3-mountain-pose.webp",
   },
+  {
+    name: "Standing Forward Fold",
+    sanskritName: "Uttanasana",
+    categories: [PoseCategory.STANDING_POSES, PoseCategory.INVERSIONS],
+    level: PoseLevel.BEGINNER,
+    imageUrl: "/pose-images/4-standing-forward-fold-pose.webp",
+  },
 ];
 
 async function main() {
