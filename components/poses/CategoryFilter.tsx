@@ -20,7 +20,7 @@ const pillClass = (active: boolean) =>
     "flex-shrink-0 px-4 py-2 rounded-sm font-cormorant font-semibold text-base transition-all duration-300 border",
     active
       ? "bg-primary text-primary-foreground border-primary"
-      : "bg-secondary text-secondary-foreground border-border hover:border-foreground/40 hover:text-foreground"
+      : "bg-secondary text-secondary-foreground hover:border-foreground/40 hover:text-foreground"
   );
 
 export default function CategoryFilter({ categories, activeCategory }: CategoryFilterProps) {
