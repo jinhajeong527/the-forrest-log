@@ -1,4 +1,4 @@
-import LogoMark from "@/components/LogoMark";
+import LogoMark from "@/components/common/LogoMark";
 import TarotCardFrame from "./TarotCardFrame";
 
 export default function JournalBrandPage() {

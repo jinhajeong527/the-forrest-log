@@ -12,6 +12,11 @@ Users can log their practice sessions, build sequences using a tarot card-style 
 ### UI / Components
 - When implementing UI components or pages, invoke the `the-forrest-log-design` skill first
   to ensure consistency with the design system
+- Design reference images are in `docs/design-references/` — consult these when building new screens
+- Component directory structure:
+  - `components/ui/` — shadcn-managed only. Never add custom files here
+  - `components/common/` — shared custom components (e.g. `ForrestButton`, `LogoMark`)
+  - `components/[domain]/` — feature-specific components (e.g. `log/`, `poses/`, `login/`)
 
 ### Architecture Decisions
 - When significant architectural decisions are made during planning, document them
@@ -63,7 +68,20 @@ CREATE POLICY "practice_logs_own" ON practice_logs
 
 ### Zod
 - Import from `"zod/v4"`, not `"zod"`
-- Always check the [Zod v4 changelog](https://zod.dev/v4) before using any method — avoid deprecated APIs
+- Before using any Zod method, check `node_modules/zod/src/v4/` for `@deprecated` JSDoc — don't rely on docs
+- `z.nativeEnum()` is **deprecated** — use `z.enum()` instead, which now accepts TypeScript enums directly:
+  ```ts
+  // ✅ correct — z.enum() accepts Prisma-generated enums
+  import { Prop } from "@/lib/generated/prisma/client";
+  z.array(z.enum(Prop))
+
+  // ❌ avoid — deprecated
+  z.array(z.nativeEnum(Prop))
+
+  // ❌ avoid — duplicates what Prisma already defines
+  const propValues = ["FOAM_ROLLER", "BLOCK", ...] as const;
+  z.array(z.enum(propValues))
+  ```
 
 ---
 

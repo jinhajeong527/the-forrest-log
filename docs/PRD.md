@@ -61,9 +61,17 @@ The MVP consists of two core features:
 
 #### 4.2.1 Log List Page
 
-- Display practice logs in reverse chronological order
-- Show date, theme, and peak pose for each entry
-- Provide a button to create a new log
+- Split layout: calendar on the left, journal list on the right
+- Calendar (shadcn Calendar / react-day-picker):
+  - Monthly view with prev/next navigation
+  - Days with a practice log marked with a dot indicator
+  - Clicking a date scrolls to and highlights that entry in the list
+  - Mobile: calendar stacked above the list
+- Journal list (reverse chronological):
+  - Each entry shows date (large, serif), class theme, and peak pose name
+  - Tapping an entry opens a detail dialog
+- Empty state when no logs exist
+- "New Log" button in sticky header — opens a create dialog
 
 #### 4.2.2 Create Log
 
@@ -94,9 +102,9 @@ A nested record within the practice log.
 | Order | Integer | Yes (drag & drop) |
 | Notes | Text | No |
 
-#### 4.2.4 Log Detail Page
+#### 4.2.4 Log Detail Dialog
 
-- View all content of a saved practice log
+- View all content of a saved practice log in a dialog
 - If a sequence log exists, display poses as tarot cards in order
 - Edit and delete actions available
 
@@ -215,10 +223,7 @@ index: (practice_log_id, order)
 ```
 /                         → Home (landing / login redirect)
 /login                    → Login
-/log                      → Practice log list
-/log/new                  → Create practice log
-/log/[id]                 → Practice log detail
-/log/[id]/edit            → Edit practice log
+/log                      → Practice log list (create/view/edit via dialog)
 /poses                    → Pose library
 ```
 

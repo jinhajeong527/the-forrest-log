@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useTransition } from "react";
-import { ForrestButton } from "@/components/ui/forrest-button";
+import { ForrestButton } from "@/components/common/ForrestButton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { loginWithEmail, loginWithGoogle, type AuthState } from "@/app/login/actions";
@@ -42,7 +42,7 @@ export default function JournalLoginForm() {
             name="email"
             autoComplete="email"
             required
-            className="bg-transparent border-border focus-visible:ring-primary/40 rounded-none border-x-0 border-t-0 px-0 shadow-none font-cormorant text-base"
+            className="bg-transparent focus-visible:ring-primary/40 rounded-none border-x-0 border-t-0 px-0 shadow-none font-cormorant text-base"
           />
         </div>
 
@@ -59,7 +59,7 @@ export default function JournalLoginForm() {
             name="password"
             autoComplete="current-password"
             required
-            className="bg-transparent border-border focus-visible:ring-primary/40 rounded-none border-x-0 border-t-0 px-0 shadow-none font-cormorant text-base"
+            className="bg-transparent focus-visible:ring-primary/40 rounded-none border-x-0 border-t-0 px-0 shadow-none font-cormorant text-base"
           />
         </div>
 

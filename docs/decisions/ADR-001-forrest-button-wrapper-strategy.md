@@ -44,3 +44,4 @@ through shadcn's existing cva system and CSS variables.
 - Color changes are made once in `globals.css` CSS variables and propagate everywhere
 - `components/ui/button.tsx` (shadcn) is left unmodified, making future shadcn upgrades easier
 - `ForrestButton` serves as the default button primitive across the entire app
+- `ForrestButton` lives in `components/common/` (not `components/ui/`) to keep the `ui/` directory exclusively for shadcn-managed files
