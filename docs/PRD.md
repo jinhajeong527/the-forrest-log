@@ -59,42 +59,65 @@ The MVP consists of two core features:
 
 ### 4.2 Practice Log
 
-#### 4.2.1 Log List Page
+#### 4.2.1 Log Page — Master-Detail Split View
 
-- Split layout: calendar on the left, journal list on the right
-- Calendar (shadcn Calendar / react-day-picker):
-  - Monthly view with prev/next navigation
-  - Days with a practice log marked with a dot indicator
-  - Clicking a date scrolls to and highlights that entry in the list
-  - Mobile: calendar stacked above the list
-- Journal list (reverse chronological):
-  - Each entry shows date (large, serif), class theme, and peak pose name
-  - Tapping an entry opens a detail dialog
+- Left panel: calendar (sticky, acts as date filter control)
+- Right panel: log list or editor — switches based on user action
+- Mobile: calendar stacked above panel (vertical layout)
+
+Calendar UX:
+- Default: no date selected (selectedDate = null)
+- Today: subtle highlight only (outline or dot indicator) — not the "selected" style
+- Clicking a date: strong "selected" style + filters right panel to that date
+- Today and selected states can coexist; merge visually when they fall on the same day
+
+Right panel — default (all logs):
+- Header: "Practice Logs" with "+ New Log" button on the right
+- Logs displayed in reverse chronological order (large serif date, theme, peak pose)
+- Clicking an entry switches the right panel to the detail view
 - Empty state when no logs exist
-- "New Log" button in sticky header — opens a create dialog
 
-#### 4.2.2 Create Log
+Right panel — date-filtered state:
+- Shows only logs for the selected date
+- Filter chip displayed below the header: [Mar 20, 2026 ✕]
+- Clicking ✕ clears the filter, deselects the calendar date, and returns to all logs
 
-The following fields are available when creating a practice log:
+"+ New Log" behavior:
+- Pre-fills the date field with selectedDate if active, otherwise today
+- Switches right panel to create form (no dialog)
+
+#### 4.2.2 Create / Edit Log (Right Panel)
+
+Rendered inline in the right panel — no dialog.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| Date | Date | Yes | Date of practice |
-| Class Theme | Text | No | e.g. Hip Opening, Backbends, Inversions |
-| Peak Pose | Pose select | No | Selected from Pose Library |
-| Condition Before | 1–5 scale | No | Physical condition before class |
-| Condition After | 1–5 scale | No | Physical condition after class |
-| Props Used | Multi-select | No | FOAM_ROLLER / KNEE_PAD / BLOCK / STRAP / BOLSTER / BLANKET |
+| Date | Date | Yes | Right-aligned, with → indicator |
+| Class Theme | Text | No | Free text input |
+| Peak Pose | Pose card | No | Click card placeholder → opens Pose Picker dialog |
+| Condition Before | 1–5 stars | No | Star rating UI |
+| Condition After | 1–5 stars | No | Star rating UI |
+| Props Used | SVG icon grid | No | Click icon to toggle (dimmed → colored) |
 | Notes | Textarea | No | Free memo |
-| Sequence Log | Pose list | No | See 4.2.3 |
+| Sequence Log | Button (placeholder) | No | Opens dialog in future phase; button only for now |
 
-#### 4.2.3 Sequence Log
+Peak Pose Picker:
+- Card placeholder area within the form
+- Clicking opens ForrestDialog showing the pose library (tarot card grid)
+- Selecting a pose closes the dialog and displays the card in the form
 
-A nested record within the practice log.
+Props:
+- 6 icons: FOAM_ROLLER / KNEE_PAD / BLOCK / STRAP / BOLSTER / BLANKET
+- Default: muted/dimmed; selected: colored/active
+- Custom SVG assets to be provided separately; placeholder icons used in this phase
 
-- Add poses to the sequence by selecting from the Pose Library
-- Reorder poses via drag and drop
-- Each pose entry supports the following fields:
+#### 4.2.3 Sequence Log (Placeholder)
+
+- "Sequence" button placed at the bottom of the create/edit form
+- Current phase: button position reserved; no functionality implemented
+- Future phase: opens ForrestDialog for pose selection and drag-and-drop ordering
+
+Each sequence entry (future):
 
 | Field | Type | Required |
 |-------|------|----------|
@@ -102,10 +125,11 @@ A nested record within the practice log.
 | Order | Integer | Yes (drag & drop) |
 | Notes | Text | No |
 
-#### 4.2.4 Log Detail Dialog
+#### 4.2.4 Log Detail (Right Panel)
 
-- View all content of a saved practice log in a dialog
-- If a sequence log exists, display poses as tarot cards in order
+- Displayed inline in the right panel — no dialog
+- Shows all fields of the saved practice log
+- If a sequence log exists, displays poses as tarot cards in order
 - Edit and delete actions available
 
 ---
@@ -223,7 +247,8 @@ index: (practice_log_id, order)
 ```
 /                         → Home (landing / login redirect)
 /login                    → Login
-/log                      → Practice log list (create/view/edit via dialog)
+/log                      → Practice log (master-detail split view: list / create / view / edit in right panel;
+                            peak pose picker and sequence log via ForrestDialog)
 /poses                    → Pose library
 ```
 
