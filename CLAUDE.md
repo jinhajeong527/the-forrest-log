@@ -9,6 +9,11 @@ Users can log their practice sessions, build sequences using a tarot card-style 
 
 ## Conventions
 
+### File Editing
+- Always use `Edit` for existing files — make targeted, minimal changes only
+- Use `Write` only for files that do not yet exist on disk (truly new files)
+- Never use `Write` to overwrite an existing file; always use `Edit`
+
 ### UI / Components
 - When implementing UI components or pages, invoke the `the-forrest-log-design` skill first
   to ensure consistency with the design system
@@ -17,6 +22,10 @@ Users can log their practice sessions, build sequences using a tarot card-style 
   - `components/ui/` — shadcn-managed only. Never add custom files here
   - `components/common/` — shared custom components (e.g. `ForrestButton`, `LogoMark`)
   - `components/[domain]/` — feature-specific components (e.g. `log/`, `poses/`, `login/`)
+- Before reaching for raw HTML elements or bare shadcn primitives, check `components/common/`
+  for existing project wrappers. These carry the project's design system tokens and should
+  always be preferred — e.g. use `ForrestButton` instead of `<button>`, `ForrestDialog` instead
+  of bare `<Dialog>`
 
 ### Architecture Decisions
 - When significant architectural decisions are made during planning, document them
@@ -49,6 +58,21 @@ ALTER TABLE practice_logs ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "practice_logs_own" ON practice_logs
   FOR ALL USING (user_id = auth.uid());
 ```
+
+### Layout
+- Full-height layouts must use `h-dvh` + `flex flex-col` on the root wrapper, with `flex-1` on
+  the content area — never `h-[calc(100dvh-Xpx)]`. Magic number offsets break silently when
+  header height changes.
+  ```tsx
+  // ✅ correct — header takes its natural height; content fills the rest automatically
+  <div className="flex flex-col h-dvh">
+    <PageHeader />
+    <div className="flex flex-1 overflow-hidden">...</div>
+  </div>
+
+  // ❌ avoid — breaks if header height changes
+  <div className="flex h-[calc(100dvh-121px)]">...</div>
+  ```
 
 ### Tailwind CSS
 - Pseudo-element rules (e.g., `::before`, `::after`, `::-webkit-scrollbar`) cannot be nested

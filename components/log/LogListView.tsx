@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
-import LogCalendar from "./LogCalendar";
+import { ForrestButton } from "@/components/common/ForrestButton";
+import { PanelHeader } from "@/components/common/PanelHeader";
 
 export type LogEntry = {
   id: string;
@@ -13,84 +13,100 @@ export type LogEntry = {
 
 interface LogListViewProps {
   logs: LogEntry[];
+  selectedDate: Date | null;
+  onClearDate: () => void;
+  onNewLog: () => void;
   onEntryClick?: (id: string) => void;
 }
 
 function toDateKey(date: Date): string {
-  return date.toISOString().slice(0, 10);
+  return new Date(date).toISOString().slice(0, 10);
 }
 
-function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
+function formatEntryDate(date: Date): string {
+  return new Date(date).toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
   });
 }
 
-export default function LogListView({ logs, onEntryClick }: LogListViewProps) {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
-  const [month, setMonth] = useState<Date>(logs[0]?.date ?? new Date());
-  const entryRefs = useRef<Record<string, HTMLElement | null>>({});
+function formatFilterDate(date: Date): string {
+  return new Date(date).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
 
-  const logDateKeys = new Set(logs.map((l) => toDateKey(l.date)));
-
-  function handleDayClick(day: Date) {
-    setSelectedDate(day);
-    const key = toDateKey(day);
-    const el = entryRefs.current[key];
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }
+export default function LogListView({
+  logs,
+  selectedDate,
+  onClearDate,
+  onNewLog,
+  onEntryClick,
+}: LogListViewProps) {
+  const filteredLogs = selectedDate
+    ? logs.filter((l) => toDateKey(l.date) === toDateKey(selectedDate))
+    : logs;
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-[auto_1fr]">
-      {/* Calendar panel */}
-      <aside className="md:sticky md:top-[73px] md:self-start border-b md:border-b-0 md:border-r border-foreground/10 p-6">
-        <LogCalendar
-          logDateKeys={logDateKeys}
-          selectedDate={selectedDate}
-          month={month}
-          onDayClick={handleDayClick}
-          onMonthChange={setMonth}
-        />
-      </aside>
+    <div className="flex flex-col h-full">
+      {/* Panel header */}
+      <PanelHeader
+        left={
+          selectedDate ? (
+            <button
+              onClick={onClearDate}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm border border-primary/30 bg-primary/5 text-xs text-primary hover:bg-primary/10 transition-colors"
+            >
+              {formatFilterDate(selectedDate)}
+              <span aria-hidden="true">✕</span>
+              <span className="sr-only">Clear date filter</span>
+            </button>
+          ) : (
+            <span className="inline-flex items-center px-3 py-1 border border-transparent text-xs text-muted-foreground">
+              All practices
+            </span>
+          )
+        }
+        right={
+          <ForrestButton size="sm" onClick={onNewLog}>
+            + New Log
+          </ForrestButton>
+        }
+      />
 
-      {/* Journal list */}
-      <section className="divide-y divide-foreground/10">
-        {logs.length === 0 ? (
+      {/* Log entries */}
+      <section className="divide-y divide-foreground/10 flex-1">
+        {filteredLogs.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-32 gap-3 text-center px-8">
             <p className="font-cormorant italic text-muted-foreground text-2xl">
-              No entries yet
+              {selectedDate ? "No entry for this day" : "No entries yet"}
             </p>
             <p className="text-sm text-muted-foreground">
-              Begin your first practice log
+              {selectedDate
+                ? "Begin a new entry for this date"
+                : "Begin your first practice log"}
             </p>
           </div>
         ) : (
-          logs.map((log) => {
+          filteredLogs.map((log) => {
             const key = toDateKey(log.date);
-            const isHighlighted = selectedDate && toDateKey(selectedDate) === key;
-
             return (
-              <article
-                key={log.id}
-                ref={(el) => { entryRefs.current[key] = el; }}
-                className={cn(
-                  "transition-colors duration-300",
-                  isHighlighted && "bg-accent/50"
-                )}
-              >
+              <article key={log.id}>
                 <button
                   onClick={() => onEntryClick?.(log.id)}
-                  className="block w-full text-left px-8 py-7 group"
+                  className={cn(
+                    "block w-full text-left px-8 py-7 group",
+                    "transition-colors duration-200 hover:bg-accent/40"
+                  )}
                 >
                   <time
                     dateTime={key}
                     className="block font-cormorant text-3xl font-semibold tracking-wide text-foreground group-hover:text-primary transition-colors duration-300"
                   >
-                    {formatDate(log.date)}
+                    {formatEntryDate(log.date)}
                   </time>
                   {log.theme && (
                     <p className="mt-1 text-sm text-foreground/70">{log.theme}</p>

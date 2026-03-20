@@ -4,7 +4,7 @@ import { Calendar } from "@/components/ui/calendar";
 
 interface LogCalendarProps {
   logDateKeys: Set<string>;
-  selectedDate: Date | undefined;
+  selectedDate: Date | null;
   month: Date;
   onDayClick: (day: Date) => void;
   onMonthChange: (month: Date) => void;
@@ -25,7 +25,7 @@ export default function LogCalendar({
     <div className="rounded-sm border-2 p-1">
       <Calendar
         mode="single"
-        selected={selectedDate}
+        selected={selectedDate ?? undefined}
         onSelect={(day) => day && onDayClick(day)}
         month={month}
         onMonthChange={onMonthChange}
@@ -41,7 +41,8 @@ export default function LogCalendar({
           // Preserve default layout (flex, height, padding for nav overlap) + add typography
           month_caption: "flex h-(--cell-size) w-full items-center justify-center px-(--cell-size) font-cormorant text-xl font-semibold tracking-wide",
           day: "h-(--cell-size) w-(--cell-size) rounded-sm transition-colors hover:bg-accent text-sm",
-          today: "font-bold text-primary",
+          // today: subtle underline only — visually distinct from the strong "selected" fill
+          today: "underline decoration-foreground/30 underline-offset-2 font-medium",
         }}
       />
     </div>

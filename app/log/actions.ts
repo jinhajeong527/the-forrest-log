@@ -94,10 +94,8 @@ export async function updatePracticeLog(
   formData: FormData
 ): Promise<ActionState> {
   const userId = await getAuthenticatedUserId();
-  const id = formData.get("id") as string;
-
-  const existing = await prisma.practiceLog.findUnique({ where: { id } });
-  if (!existing || existing.userId !== userId) redirect("/log");
+  const id = formData.get("id");
+  if (!id || typeof id !== "string") return { message: "Invalid request." };
 
   const result = practiceLogSchema.safeParse(parseFormData(formData));
   if (!result.success) {
@@ -107,8 +105,8 @@ export async function updatePracticeLog(
   const { date, theme, peakPoseId, conditionBefore, conditionAfter, props, notes } =
     result.data;
 
-  await prisma.practiceLog.update({
-    where: { id },
+  const { count } = await prisma.practiceLog.updateMany({
+    where: { id, userId },
     data: {
       date: new Date(date),
       theme: theme || null,
@@ -119,6 +117,8 @@ export async function updatePracticeLog(
       notes: notes || null,
     },
   });
+
+  if (count === 0) redirect("/log");
 
   return { success: true };
 }
