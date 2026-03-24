@@ -1,7 +1,7 @@
 /**
  * Pose Image Generation Script
  *
- * Generates tarot card style yoga pose images using OpenAI gpt-image-1.
+ * Generates tarot card style yoga pose images using OpenAI gpt-image-1.5.
  * Uses an existing pose image as a style reference via images.edit().
  *
  * Usage:
@@ -20,7 +20,6 @@
 import * as fs from "fs";
 import * as path from "path";
 import OpenAI from "openai";
-import sharp from "sharp";
 
 const OUTPUT_DIR = path.join(process.cwd(), "public/pose-images");
 const POSES_JSON = path.join(process.cwd(), "scripts/forrest-poses.json");
@@ -85,17 +84,13 @@ function sleep(ms: number) {
 
 async function generateImage(
   client: OpenAI,
+  referenceFile: File,
   pose: PoseEntry,
   number: number,
   outputPath: string,
   retries = 0
 ): Promise<void> {
   try {
-    const referenceBuffer = fs.readFileSync(REFERENCE_IMAGE);
-    const referenceFile = new File([referenceBuffer], "reference.png", {
-      type: "image/png",
-    });
-
     const response = await client.images.edit({
       model: "gpt-image-1.5",
       image: referenceFile,
@@ -118,18 +113,23 @@ async function generateImage(
         `  Retry ${retries + 1}/${MAX_RETRIES} after ${waitMs}ms... (${(err as Error).message})`
       );
       await sleep(waitMs);
-      return generateImage(client, pose, number, outputPath, retries + 1);
+      return generateImage(client, referenceFile, pose, number, outputPath, retries + 1);
     }
     throw err;
   }
+}
+
+function getArg(args: string[], flag: string): string | undefined {
+  const idx = args.indexOf(flag);
+  return idx !== -1 ? args[idx + 1] : undefined;
 }
 
 async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes("--dry-run");
   const force = args.includes("--force");
-  const startIdx = parseInt(args[args.indexOf("--start") + 1] ?? "1");
-  const endArg = args[args.indexOf("--end") + 1];
+  const startIdx = parseInt(getArg(args, "--start") ?? "1");
+  const endArg = getArg(args, "--end");
 
   const poses: PoseEntry[] = JSON.parse(fs.readFileSync(POSES_JSON, "utf-8"));
   const endIdx = endArg ? parseInt(endArg) : poses.length;
@@ -140,6 +140,9 @@ async function main() {
   }
 
   const client = dryRun ? null : new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+  const referenceBuffer = fs.readFileSync(REFERENCE_IMAGE);
+  const referenceFile = new File([referenceBuffer], "reference.png", { type: "image/png" });
 
   console.log(`Generating poses ${startIdx}–${endIdx} of ${poses.length} total`);
   if (dryRun) console.log("DRY RUN — no API calls will be made\n");
@@ -169,7 +172,7 @@ async function main() {
     }
 
     try {
-      await generateImage(client!, pose, number, outputPath);
+      await generateImage(client!, referenceFile, pose, number, outputPath);
       console.log(`       ✓ saved`);
       generated++;
     } catch (err) {
