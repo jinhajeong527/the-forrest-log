@@ -1,0 +1,2 @@
+ALTER TYPE "PoseCategory" ADD VALUE 'SEATED';
+ALTER TYPE "PoseCategory" ADD VALUE 'SUPINE';

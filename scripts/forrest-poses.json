@@ -1,0 +1,2399 @@
+[
+  {
+    "name": "Downward Facing Dog Pose",
+    "sanskritName": "Adho Mukha Svanasana",
+    "categories": [
+      "INVERSIONS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Corpse Pose",
+    "sanskritName": "Shavasana",
+    "categories": [
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Mountain Pose",
+    "sanskritName": "Tadasana",
+    "categories": [
+      "BALANCING_POSES",
+      "RESTORATIVE",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Standing Forward Fold Pose",
+    "sanskritName": "Uttanasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Table Top Pose",
+    "sanskritName": "Bharmanasana",
+    "categories": [
+      "BALANCING_POSES"
+    ]
+  },
+  {
+    "name": "Warrior Pose Ii",
+    "sanskritName": "Virabhadrasana Ii",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Cat Cow Pose",
+    "sanskritName": "Bitilasana Marjaryasana",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Plank Pose",
+    "sanskritName": "Phalakasana",
+    "categories": [
+      "ARM_BALANCES",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Wind Release Pose",
+    "sanskritName": "Pawanmuktasana",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Child Pose",
+    "sanskritName": "Balasana",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES",
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Easy Pose",
+    "sanskritName": "Sukhasana",
+    "categories": [
+      "RESTORATIVE",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Wide Child Pose",
+    "sanskritName": "Prasarita Balasana",
+    "categories": [
+      "ABDOMINALS",
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Runners Lunge Pose",
+    "sanskritName": "Utthita Ashwa Sanchalanasana",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "High Lunge Pose",
+    "sanskritName": "Ashta Chandrasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Three Legged Downward Facing Dog Pose",
+    "sanskritName": "Tri Pada Adho Mukha Svanasana",
+    "categories": [
+      "HIP_OPENERS",
+      "INVERSIONS"
+    ]
+  },
+  {
+    "name": "Chair Pose",
+    "sanskritName": "Utkatasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Low Lunge Pose",
+    "sanskritName": "Anjaneyasana",
+    "categories": [
+      "BACKBENDS",
+      "HIP_OPENERS",
+      "LUNGES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Warrior Pose I",
+    "sanskritName": "Virabhadrasana I",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Reverse Warrior Pose",
+    "sanskritName": "Viparita Virabhadrasana",
+    "categories": [
+      "BACKBENDS",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Staff Pose",
+    "sanskritName": "Dandasana",
+    "categories": [
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Bridge Pose",
+    "sanskritName": "Setubandha Sarvangasana",
+    "categories": [
+      "BACKBENDS",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Happy Baby Pose",
+    "sanskritName": "Ananda Balasana",
+    "categories": [
+      "HIP_OPENERS",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Supine Spinal Twist Pose Ii",
+    "sanskritName": "Supta Matsyendrasana Ii",
+    "categories": [
+      "SUPINE",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Upward Forward Fold Hands On Shins",
+    "sanskritName": "Ardha Uttanasana Hands On Shins",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Volcano Pose",
+    "sanskritName": "Urdhva Hastasana",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Triangle Pose",
+    "sanskritName": "Trikonasana",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Garland Pose",
+    "sanskritName": "Malasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "SEATED",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Intense Leg Stretch Pose",
+    "sanskritName": "Prasarita Padottanasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Seated Forward Bend Pose",
+    "sanskritName": "Paschimottanasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Bound Angle Pose",
+    "sanskritName": "Baddha Konasana",
+    "categories": [
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Tree Pose",
+    "sanskritName": "Vrksasana",
+    "categories": [
+      "BALANCING_POSES",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Puppy Dog Pose",
+    "sanskritName": "Uttana Shishosana",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Cobra Pose",
+    "sanskritName": "Bhujangasana",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Supine Spinal Twist Yoga Pose I",
+    "sanskritName": "Supta Matsyendrasana I",
+    "categories": [
+      "HIP_OPENERS",
+      "SUPINE",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Mountain Pose Namaste",
+    "sanskritName": "Pranamasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Reverse Pigeon Pose",
+    "sanskritName": "Sucirandhrasana",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Sphinx Pose",
+    "sanskritName": "Salamba Bhujangasana",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Half Wind Release Pose",
+    "sanskritName": "Ardha Pavan Muktasana",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Warrior Pose Iii",
+    "sanskritName": "Virabhadrasana Iii",
+    "categories": [
+      "BALANCING_POSES",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Head To Knee Pose",
+    "sanskritName": "Janu Sirsasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Three Legged Downward Facing Dog Pose Tiger Curl Pose Flow",
+    "sanskritName": "Tri Pada Adho Mukha Svanasana Phalakasana Knee To Nose Vinyasa",
+    "categories": [
+      "ARM_BALANCES",
+      "HIP_OPENERS"
+    ]
+  },
+  {
+    "name": "Crocodile Pose",
+    "sanskritName": "Makarasana",
+    "categories": [
+      "ABDOMINALS",
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Half Pigeon Pose",
+    "sanskritName": "Ardha Kapotasana",
+    "categories": [
+      "BACKBENDS",
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Thread The Needle Pose Flow",
+    "sanskritName": "Urdhva Mukha Pasasana Flow",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Reclining Bound Angle Pose",
+    "sanskritName": "Supta Baddha Konasana",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Easy Pose Variation Side Bend",
+    "sanskritName": "Sukhasana Variation Side Bend",
+    "categories": [
+      "RESTORATIVE",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Extended Side Angle Pose",
+    "sanskritName": "Utthita Parsvakonasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Full Body Stretch Pose",
+    "sanskritName": "Supta Utthita Tadasana",
+    "categories": [
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Revolved Lunge Pose",
+    "sanskritName": "Parivrtta Utthita Ashwa Sanchalanasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Four Limbed Staff Pose",
+    "sanskritName": "Chaturanga Dandasana",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Balancing Table Pose",
+    "sanskritName": "Dandayamana Bharmanasana",
+    "categories": [
+      "ARM_BALANCES",
+      "BALANCING_POSES",
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Goddess Pose",
+    "sanskritName": "Utkata Konasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Easy Pose Variation Arms Knees",
+    "sanskritName": "Sukhasana Variation Arms Knees",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Dangling Pose",
+    "sanskritName": "Baddha Hasta Uttanasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Crescent Low Lunge Pose Variation Knee On Floor",
+    "sanskritName": "Ashwa Sanchalanasana",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Three Legged Downward Facing Dog Pose Variation Stacked",
+    "sanskritName": "Tri Pada Adho Mukha Svanasana Variation Stacked",
+    "categories": [
+      "ARM_BALANCES",
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Seated Torso Circles",
+    "sanskritName": "Kundalini Circles",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Revolved Chair Pose",
+    "sanskritName": "Parivrtta Utkatasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Extended Side Angle Pose Variation Elbow Arm",
+    "sanskritName": "Utthita Parsvakonasana Variation Elbow Arm",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Five Pointed Star Pose",
+    "sanskritName": "Utthita Tadasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Thunderbolt Pose",
+    "sanskritName": "Vajrasana",
+    "categories": [
+      "RESTORATIVE",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Balancing Table Pose With Knee To Nose Flow",
+    "sanskritName": "Dandayamana Bharmanasana Knee To Nose Vinyasa",
+    "categories": [
+      "ARM_BALANCES",
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Boat Pose",
+    "sanskritName": "Navasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Extended Mountain Pose With Backbend",
+    "sanskritName": "Utthita Tadasana With Backbend",
+    "categories": [
+      "BACKBENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Seated Cat Cow Pose",
+    "sanskritName": "Upavistha Bitilasana Marjaryasana",
+    "categories": [
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Half Splits Pose",
+    "sanskritName": "Ardha Hanumanasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "LUNGES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Seated Shoulder Rolls",
+    "sanskritName": "Upavishta Skandha Vrtta",
+    "categories": [
+      "RESTORATIVE",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Locust Pose",
+    "sanskritName": "Salabhasana",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Standing Spinal Roll Up Pose Flow",
+    "sanskritName": null,
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Constructive Rest Pose",
+    "sanskritName": "Savasana Variation Bent Legs",
+    "categories": [
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Easy Pose Neck Side Stretch",
+    "sanskritName": "Sukhasana Neck Side Stretch",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Supine Windshield Wiper Twist Pose",
+    "sanskritName": "Supta Parivrtta Sucirandhrasana Variation",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Half Moon Pose",
+    "sanskritName": "Ardha Chandrasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Side Plank Pose",
+    "sanskritName": "Vasisthasana",
+    "categories": [
+      "ARM_BALANCES",
+      "BALANCING_POSES",
+      "LUNGES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Upward Facing Dog Pose",
+    "sanskritName": "Urdhva Mukha Svanasana",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Sleeping Swan Pose",
+    "sanskritName": "Kapotasana II",
+    "categories": [
+      "ABDOMINALS",
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Shoulderstand Pose",
+    "sanskritName": "Sarvangasana",
+    "categories": [
+      "INVERSIONS",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Easy Pose Warm Up Flow",
+    "sanskritName": "Sukhasana Warm Up Vinyasa",
+    "categories": [
+      "RESTORATIVE",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Standing Wind Release Pose",
+    "sanskritName": null,
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Eagle Pose",
+    "sanskritName": "Garudasana",
+    "categories": [
+      "BALANCING_POSES",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Half Lord Of The Fishes Pose Variation Hand Up Leg",
+    "sanskritName": "Ardha Matsyendrasana Variation Hand Up Leg",
+    "categories": [
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Seated Windshield Wiper Pose",
+    "sanskritName": "Upavistha Jathara Parivartanasana",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Crescent Low Lunge Hamstring Stretch Flow",
+    "sanskritName": "Anjaneyasana Hamstring Stretch Vinyasa",
+    "categories": [
+      "FORWARD_BENDS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Revolved Easy Pose",
+    "sanskritName": "Parivrtta Sukhasana",
+    "categories": [
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Seated Neck Rolls",
+    "sanskritName": "Greeva Sanchalana",
+    "categories": [
+      "RESTORATIVE",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Seated Straddle Pose",
+    "sanskritName": "Upavistha Konasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Butterfly Pose Variation Forward Bend",
+    "sanskritName": "Tarasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Fish Pose",
+    "sanskritName": "Matsyasana",
+    "categories": [
+      "BACKBENDS",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Lizard Pose",
+    "sanskritName": "Utthan Pristhasana",
+    "categories": [
+      "ARM_BALANCES",
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Palm Tree Pose Side Bend",
+    "sanskritName": "Parsva Bhanga",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Revolved Side Angle Pose",
+    "sanskritName": "Parivrtta Parsvakonasana Namaste Hands",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Bow Pose",
+    "sanskritName": "Dhanurasana",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Chair Mountain Pose",
+    "sanskritName": "Chair Tadasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Five Pointed Star Pose Arms Up",
+    "sanskritName": "Utthita Tadasana Arms Up",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Thread The Needle Pose",
+    "sanskritName": "Urdhva Mukha Pasasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Low Lunge Hands To Knee",
+    "sanskritName": "Anjaneyasana Hands To Knee",
+    "categories": [
+      "BALANCING_POSES",
+      "LUNGES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Revolved Low Lunge Pose Knee On The Floor",
+    "sanskritName": "Parivrtta Anjaneyasana Knee On The Floor",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Half Chair Pose",
+    "sanskritName": "Ardha Utkatasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Meditation",
+    "sanskritName": "Dhyanam",
+    "categories": [
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Palm Tree Pose",
+    "sanskritName": "Urdhva Hastotanasana",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Wild Thing Pose",
+    "sanskritName": "Camatkarasana",
+    "categories": [
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Revolved Head To Knee Pose Prep",
+    "sanskritName": "Parivrtta Janu Sirsasana Prep",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Plough Pose",
+    "sanskritName": "Halasana",
+    "categories": [
+      "INVERSIONS",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Camel Pose",
+    "sanskritName": "Ustrasana",
+    "categories": [
+      "BACKBENDS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Dancer Pose",
+    "sanskritName": "Natarajasana",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Side Plank Pose Variation",
+    "sanskritName": "one Knee On The Floor) (Vasisthasana Variation Eka Janu Bhumi",
+    "categories": [
+      "ARM_BALANCES",
+      "BALANCING_POSES",
+      "LUNGES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Half Moon Variation",
+    "sanskritName": "knee On The Floor) (Kneeling Ardha Chandrasana",
+    "categories": [
+      "ARM_BALANCES",
+      "BALANCING_POSES",
+      "LUNGES",
+      "SEATED",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Wide Legged Squat Over One Leg",
+    "sanskritName": "Skandasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Revolved Wide Legged Forward Bend Pose",
+    "sanskritName": "Parivrtta Prasarita Padottanasana",
+    "categories": [
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Downward Facing Dog Pose Plank Pose Flow",
+    "sanskritName": "Adho Mukha Svanasana Phalakasana Vinyasa",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Standing Split Pose",
+    "sanskritName": "Urdhva Prasarita Eka Padasana",
+    "categories": [
+      "ARM_BALANCES",
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Dolphin Pose",
+    "sanskritName": "Catur Svanasana",
+    "categories": [
+      "ARM_BALANCES",
+      "INVERSIONS"
+    ]
+  },
+  {
+    "name": "Intense Side Stretch Pose",
+    "sanskritName": "Parsvottanasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Forearm Plank Pose",
+    "sanskritName": "Phalakasana Ii",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Forward Fold Flow",
+    "sanskritName": "Uttanasana Vinyasa",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Tiger Pose Variation 1",
+    "sanskritName": "Vyaghrasana Variation 1",
+    "categories": [
+      "ARM_BALANCES",
+      "BACKBENDS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Reclined Knee Circles",
+    "sanskritName": "Supta Janu Chakra",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Upward Salute Side Bend Pose",
+    "sanskritName": "Parsva Urdhva Hastasana",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Standing Forward Fold Pose Variation Knees Bent",
+    "sanskritName": "Uttanasana Variation Knees Bent",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Humble Warrior Pose",
+    "sanskritName": "Baddha Virabhadrasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Reverse Triangle Pose",
+    "sanskritName": "Viparita Trikonasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Revolved Low Lunge Pose Variation 1",
+    "sanskritName": "Parivrtta Anjaneyasana Variation 1",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Toe Squat",
+    "sanskritName": "Vajrasana Variation On Toes",
+    "categories": [
+      "LUNGES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Revolved Standing Forward Fold Pose Variation Knee Bent",
+    "sanskritName": "Parivrtta Uttanasana Variation Knee Bent",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Revolved High Lunge Pose",
+    "sanskritName": "Parivrtta Ashtachandrasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Half Plough Pose",
+    "sanskritName": "Ardha Halasana",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Bridge Pose Block",
+    "sanskritName": "Setubandha Sarvangasana Block",
+    "categories": [
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Revolved Squat Pose",
+    "sanskritName": "Parivrtta Malasana",
+    "categories": [
+      "SEATED",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Upward Plank Pose",
+    "sanskritName": "Purvottanasana",
+    "categories": [
+      "ARM_BALANCES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Reclining Eagle Spinal Twist Pose",
+    "sanskritName": "Supta Parivrtta Garudasana",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Table Top Pose Knees Up",
+    "sanskritName": "Bharmanasana Knees Up",
+    "categories": [
+      "ARM_BALANCES",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Table Top Pose Wrist Stretch",
+    "sanskritName": "Bharmanasana Wrist Stretch",
+    "categories": [
+      "LUNGES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Easy Revolved Side Angle Pose",
+    "sanskritName": "Saral Parivrtta Parsvakonasana",
+    "categories": [
+      "LUNGES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Camel Pose Variation 1",
+    "sanskritName": "Ustrasana Variation 1",
+    "categories": [
+      "BACKBENDS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Wild Thing Pose Knee To Floor Variation",
+    "sanskritName": "Camatkarasana Variation",
+    "categories": [
+      "LUNGES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Cow Face Pose",
+    "sanskritName": "Gomukhasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Pyramid Pose Arms Extended Forward",
+    "sanskritName": "Parsvottanasana Arms Extended Forward",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Intense Leg Stretch Pose C",
+    "sanskritName": "Prasarita Padottanasana C",
+    "categories": [
+      "FORWARD_BENDS"
+    ]
+  },
+  {
+    "name": "Reclined Big Toe Pose Straps",
+    "sanskritName": "Supta Padangusthasana A Straps",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Revolved Triangle Pose",
+    "sanskritName": "Parivrtta Trikonasana",
+    "categories": [
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Easy Boat Pose",
+    "sanskritName": "Sahaja Navasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Upward Forward Fold Pose",
+    "sanskritName": "Urdhva Uttanasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Cobra Pose Elbows Bent",
+    "sanskritName": "Bhujangasana Elbows Bent",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Extended Triangle Pose",
+    "sanskritName": "Utthita Trikonasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Easy Pose Prayer Hands Variation Revolved Easy Pose Flow",
+    "sanskritName": "Sukhasana Anjali Mudra Variation Parivrtta Sukhasana Vinyasa",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Revolved Bound Angle Pose",
+    "sanskritName": "Parivrtta Baddha Konasana",
+    "categories": [
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Intense Leg Stretch Pose D",
+    "sanskritName": "Prasarita Padottanasana D",
+    "categories": [
+      "FORWARD_BENDS"
+    ]
+  },
+  {
+    "name": "Revolved Downward Facing Dog Pose",
+    "sanskritName": null,
+    "categories": [
+      "ARM_BALANCES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Garland Pose Standing Forward Bend Pose Flow",
+    "sanskritName": "Malasana Uttanasana Vinyasa",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "High Lunge Arms Extended Forward",
+    "sanskritName": "Ashta Chandrasana Arms Extended Forward",
+    "categories": [
+      "LUNGES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Beginner Tree Pose",
+    "sanskritName": "Beginner Vrksasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Sage Marichi Pose C",
+    "sanskritName": "Marichyasana C",
+    "categories": [
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Downward Facing Dog Pose Variation One Knee Bent",
+    "sanskritName": "Adho Mukha Svanasana Variation One Knee Bent",
+    "categories": [
+      "FORWARD_BENDS"
+    ]
+  },
+  {
+    "name": "One Legged Bridge Pose",
+    "sanskritName": "Eka Pada Setubandha Sarvangasana",
+    "categories": [
+      "BACKBENDS",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Standing Twist Opposite Hand to Knee Pose",
+    "sanskritName": "Eka Pada Parivrtta Tadasana Hand to Knee",
+    "categories": [
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Crescent High Lunge Shoulder Opener",
+    "sanskritName": "Ashta Chandrasana Shoulder Opener",
+    "categories": [
+      "LUNGES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Half Splits Pose Block",
+    "sanskritName": "Ardha Hanumanasana Block",
+    "categories": [
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Sphinx Pose With Half Frog Pose Legs",
+    "sanskritName": "Salamba Bhujangasana Ardha Bhekasana Pada",
+    "categories": [
+      "ABDOMINALS",
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Revolved Cobra Pose",
+    "sanskritName": "Parivrtta Bhujangasana",
+    "categories": [
+      "ABDOMINALS",
+      "ARM_BALANCES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Standing Backbend Pose",
+    "sanskritName": "Anuvittasana",
+    "categories": [
+      "BACKBENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Wrist Joint Rotation",
+    "sanskritName": "Manibandha Chakra",
+    "categories": [
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Garland Pose Variation",
+    "sanskritName": "Malasana Variation",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "SEATED",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Half Lord Of The Fishes Pose Variation Hand Up",
+    "sanskritName": "Ardha Matsyendrasana Variation Hand Up",
+    "categories": [
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Hero Pose",
+    "sanskritName": "Virasana",
+    "categories": [
+      "LUNGES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Warrior Pose I Bound Hands Humble Warrior Flow",
+    "sanskritName": "Virabhadrasana I Baddha Virabhadrasana Vinyasa",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Flamingo Pose",
+    "sanskritName": "Rajahamsasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Scorpion Twist Pose",
+    "sanskritName": "Supta Parivrtta Vrschikasana",
+    "categories": [
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Crescent Low Lunge Pose Block",
+    "sanskritName": null,
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Reverse Corpse Pose",
+    "sanskritName": "Advasana",
+    "categories": [
+      "ABDOMINALS",
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Revolved Chair Pose Easy Stretch",
+    "sanskritName": "Parivrtta Utkatasana Sukha Stretch",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Wide Legged Forward Bend Pose Variation Both Hands On One Ankle",
+    "sanskritName": "Prasarita Padottanasana Both Hands On One Ankle",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Revolved Table Top Pose One Hand Raised",
+    "sanskritName": "Parivrtta Bharmanasana Urdhva Eka Hasta",
+    "categories": [
+      "ARM_BALANCES",
+      "LUNGES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Pyramid Pose Hands On Blocks",
+    "sanskritName": "Parsvottanasana Hands On Blocks",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Half Happy Baby Pose Variation 1",
+    "sanskritName": "Ardha Ananda Balasana Variation 1",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Standing Hand To Big Toe Pose In Front",
+    "sanskritName": "Utthita Hasta Padangusthasana In Front",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Superman Pose",
+    "sanskritName": "Vimanasana Variation Arms Forward",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Twisted Reverse Warrior Pose",
+    "sanskritName": "Parivrtta Viparita Virabhadrasana",
+    "categories": [
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Revolved Chair Pose Variation",
+    "sanskritName": "Parivrtta Utkatasana Variation",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Supine Spinal Twist Eagle Legs Pose",
+    "sanskritName": "Supta Matsyendrasana Garuda Legs Asana",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Downward Facing Dog Pose Variation Knees Bent",
+    "sanskritName": "Adho Mukha Svanasana Variation Knees Bent",
+    "categories": [
+      "FORWARD_BENDS"
+    ]
+  },
+  {
+    "name": "Firelog Pose",
+    "sanskritName": "Agnistambhasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Circle Of Joy",
+    "sanskritName": "Ananda Mandalasana",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Standing Hand To Big Toe Pose",
+    "sanskritName": "Utthita Hasta Padangusthasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Frog Pose I",
+    "sanskritName": "Mandukasana I",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Side Reclined Shoulder Stretch A Supine Spinal Twist Pose Ii Flow",
+    "sanskritName": "Side Reclined Shoulder Stretch A Supta Matsyendrasana Ii Flow",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Table Top Hip Circles",
+    "sanskritName": "Bharmanasana Hip Circles",
+    "categories": [
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Banana Pose Variation",
+    "sanskritName": "Bananasana Variation",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Bound Extended Side Angle Pose",
+    "sanskritName": "Baddha Utthita Parsvakonasana",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Mountain Pose Cactus Arms Backbend",
+    "sanskritName": "Tadasana Cactus Arms Backbend",
+    "categories": [
+      "BACKBENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Plank Pose Knees Bent",
+    "sanskritName": "Phalakasana Knees Bent",
+    "categories": [
+      "ARM_BALANCES",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Standing Hand To Knee Pose",
+    "sanskritName": "Tadasana Janu Hastasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Puppy Dog Pose Blocks",
+    "sanskritName": "Uttana Shishosana Blocks",
+    "categories": [
+      "LUNGES",
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Shoelace Pose",
+    "sanskritName": "Padukabandhini Asana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Cow Pose",
+    "sanskritName": "Bitilasana",
+    "categories": [
+      "BACKBENDS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Cat Cow Pose With Leg To Side",
+    "sanskritName": "Bitilasana Marjaryasana With Leg To Side",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Warrior Pose Iii Blocks",
+    "sanskritName": "Virabhadrasana Iii Blocks",
+    "categories": [
+      "ARM_BALANCES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Warrior Pose I Eagle Arms",
+    "sanskritName": "Virabhadrasana I Garudasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Plank Pose Four Limbed Staff Pose Flow",
+    "sanskritName": "Phalakasana Chaturanga Dandasana Vinyasa",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Revolved Head To Knee Pose",
+    "sanskritName": "Parivrtta Janu Sirsasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Half Lord Of The Fishes Pose",
+    "sanskritName": "Ardha Matsyendrasana",
+    "categories": [
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Hands Bound Rising Locust Pose",
+    "sanskritName": "Baddha Hasta Utthita Stiti Salabhasana",
+    "categories": [
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Pyramid Pose Variation 1",
+    "sanskritName": "Parsvottanasana Variation 1",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Mountain Pose Variation Feet Hip Wide",
+    "sanskritName": "Tadasana Variation Feet Hip Wide",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Upward Forward Fold Block",
+    "sanskritName": "Ardha Uttanasana Block",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Nectar Of The Moon Pose Ii",
+    "sanskritName": "Somachandrasana Ii",
+    "categories": [
+      "HIP_OPENERS",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Pyramid Pose Prep With Backbend",
+    "sanskritName": "Parsvottanasana Prep With Backbend",
+    "categories": [
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Sage Twist Pose",
+    "sanskritName": "Marichyasana",
+    "categories": [
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Tree Pose Side Bend",
+    "sanskritName": "Vrksasana Side Bend",
+    "categories": [
+      "BALANCING_POSES",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Revolved Boat Pose Variation Knees Bent",
+    "sanskritName": "Parivrtta Navasana Variation Knees Bent",
+    "categories": [
+      "ABDOMINALS",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Shoulder Rolls Bent Elbows Variation Close Up",
+    "sanskritName": "Skandha Chakra Variation Close Up",
+    "categories": [
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Locust Pose Legs On Floor",
+    "sanskritName": "Salabhasana Legs On Floor",
+    "categories": [
+      "ABDOMINALS"
+    ]
+  },
+  {
+    "name": "Extended Side Angle Pose Block",
+    "sanskritName": "Utthita Parsvakonasana Block",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Eagle Arms Close Up",
+    "sanskritName": "Hasta Garuda Close Up",
+    "categories": [
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Reverse Warrior Pose Wrist Hold",
+    "sanskritName": "Viparita Virabhadrasana Wrist Hold",
+    "categories": [
+      "BACKBENDS",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Seated Ear To Shoulder Pose",
+    "sanskritName": "Sukhasana Ear To Shoulder",
+    "categories": [
+      "RESTORATIVE",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Garland Pose Hands Forward",
+    "sanskritName": "Malasana Hands Forward",
+    "categories": [
+      "FORWARD_BENDS",
+      "HIP_OPENERS",
+      "SEATED",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Rotator Cuff Stretch Pose",
+    "sanskritName": null,
+    "categories": [
+      "LUNGES",
+      "RESTORATIVE",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Revolved Bound Angle Pose Side Stretch",
+    "sanskritName": "Parivrtta Baddha Konasana Side Stretch",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Eye Of The Needle Pose Variation Ii",
+    "sanskritName": "Sucirandhrasana Variation Ii",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "One Legged Bridge Pose Legs Flow",
+    "sanskritName": "Eka Pada Setubandha Sarvangasana Pada Vinyasa",
+    "categories": [
+      "INVERSIONS",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Horse Pose Side Stretch",
+    "sanskritName": "Vatayanasana Side Stretch",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Cow Face Pose Arms Close Up",
+    "sanskritName": "Gomukhasana Arms Close Up",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Intense Side Stretch Pose Variation Hands On Floor",
+    "sanskritName": "Parsvottanasana Variation Hands On Floor",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Bicycle Pose Criss Cross Legs Flow",
+    "sanskritName": "Dvichakravahanasana Criss Cross Pada Flow",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Cat Cow Pose Forearms",
+    "sanskritName": "Bitilasana Marjaryasana Forearms",
+    "categories": [
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Revolved Seated Angle Pose",
+    "sanskritName": "Parivrtta Upavistha Konasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Chair Pose Downward Facing Dog Pose Flow",
+    "sanskritName": "Vinyasa Utkatasana Adho Mukha Svanasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Crescent Low Lunge Pose Lateral Extension Knee Over Ankle",
+    "sanskritName": "Anjaneyasana Lateral Extension Knee Over Ankle",
+    "categories": [
+      "HIP_OPENERS",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Easy Pose Block",
+    "sanskritName": "Sukhasana Block",
+    "categories": [
+      "RESTORATIVE",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Extended Side Angle Pose Variation Hand In Front",
+    "sanskritName": "Utthita Parsvakonasana Variation Hand In Front",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Table Top Pose Lateral Leg Lift Flow",
+    "sanskritName": null,
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Side Plank Pose Variation Tree Leg",
+    "sanskritName": "Vasisthasana Variation Tree Leg",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "One Legged Dolphin Pose",
+    "sanskritName": "One Legged Catur Svanasana",
+    "categories": [
+      "INVERSIONS"
+    ]
+  },
+  {
+    "name": "Bird of Paradise Pose",
+    "sanskritName": "Svarga Dvijasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Twisted Lizard Pose",
+    "sanskritName": "Parivrtta Utthan Pristhasana",
+    "categories": [
+      "ARM_BALANCES",
+      "HIP_OPENERS",
+      "LUNGES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Reclined Eagle Crunches",
+    "sanskritName": "Supta Garuda Crunches",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Head On Knee Pose Preparation",
+    "sanskritName": "Janu Sirsasana Preparation",
+    "categories": [
+      "FORWARD_BENDS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "One Legged Five Pointed Star Pose Side Bend",
+    "sanskritName": "Eka Pada Utthita Parsva Tadasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Locust Pose Bound Hands",
+    "sanskritName": "Salabhasana Baddha Hasta",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Low Lunge Pose Variation Hands On Thighs",
+    "sanskritName": null,
+    "categories": [
+      "BACKBENDS",
+      "HIP_OPENERS",
+      "LUNGES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Boat Pose Block Between Knees",
+    "sanskritName": "Navasana Block Between Knees",
+    "categories": [
+      "BALANCING_POSES",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Bridge Pose Eye Of The Needle Legs",
+    "sanskritName": "Setubandha Sarvangasana Pada Sucirandhrasana",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Humble Warrior Pose Arms Extended Backwards",
+    "sanskritName": "Baddha Virabhadrasana Hasta Extended Backwards",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Warrior Pose I Triangle Pose Flow",
+    "sanskritName": "Virabhadrasana I Trikonasana Vinyasa",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Half Boat Pose Arms Forward Wind Release Pose Nose To Knee Flow",
+    "sanskritName": "Ardha Navasana Arms Forward Pawanmuktasana Nose To Knee Vinyasa",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Warrior Ii Eagle Arms",
+    "sanskritName": "Virabhadrasana Ii Eagle Arms",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Mountain Pose Raised Hands Forward Fold Pose Arms Flow",
+    "sanskritName": "Tadasana Urdhva Hastasana Uttanasana Hasta Vinyasa",
+    "categories": [
+      "BALANCING_POSES",
+      "RESTORATIVE",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Head On Knee Pose C",
+    "sanskritName": "Janu Sirsasana C",
+    "categories": [
+      "FORWARD_BENDS",
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Goddess Pose Variation Forward Bend On Heels",
+    "sanskritName": "Utkata Konasana Variation Forward Bend On Heels",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Standing Side Bend Strap Pose",
+    "sanskritName": "Tadasana Side Bend Strap Pose",
+    "categories": [
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Twist Half Chair Pose",
+    "sanskritName": "Parivrtta Ardha Utkatasana",
+    "categories": [
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Half Wind Release Pose Nose To Knee Foot Raised",
+    "sanskritName": "Ardha Pavan Muktasana Nose To Knee Foot Raised",
+    "categories": [
+      "HIP_OPENERS",
+      "RESTORATIVE",
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Bear Pose Arms Out Yoga Sequence",
+    "sanskritName": "Bhallukasana Prasarita Hasta Yoga Anukrama",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Bird Of Paradise Prep Pose",
+    "sanskritName": "Svarga Dvijasana Prep Pose",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Side Plank Pose Arm Overhead",
+    "sanskritName": "Vasisthasana Arm Overhead",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Low Lunge Triceps Stretching",
+    "sanskritName": "Anjaneyasana Triceps Stretching",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Dolphin Plank Variation One Leg Raised",
+    "sanskritName": "Catur Svanasana Phalakasana Variation One Leg Raised",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Revolved Cobra Pose Arm On Leg",
+    "sanskritName": "Parivrtta Bhujangasana Arm On Leg",
+    "categories": [
+      "ABDOMINALS",
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Hovering Cat Pose",
+    "sanskritName": "Hovering Marjaryasana",
+    "categories": [
+      "ARM_BALANCES",
+      "LUNGES"
+    ]
+  },
+  {
+    "name": "Bharadvaja Twist Pose Ii Prep Variation Arms Raised Twist Flow",
+    "sanskritName": "Uttana Hasta Parivrtta Bharadvajasana Ii Prep Vinyasa",
+    "categories": [
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Firelog Pose Twist",
+    "sanskritName": "Parivrtta Agnistambhasana",
+    "categories": [
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Crescent Low Lunge Easy Revolved Side Angle Pose Flow",
+    "sanskritName": "Anjaneyasana Saral Parivrtta Parsvakonasana Vinyasa",
+    "categories": [
+      "BACKBENDS",
+      "HIP_OPENERS",
+      "LUNGES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Standing Archer Pose",
+    "sanskritName": "Virabhadrasana Archer Arms",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Shoulder Rolls Close Up",
+    "sanskritName": "Skandha Vrtta Close Up",
+    "categories": [
+      "RESTORATIVE"
+    ]
+  },
+  {
+    "name": "Sphinx Pose Variation Leg Movement",
+    "sanskritName": "Salamba Bhujangasana Pada Movement",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Standing Pigeon Pose",
+    "sanskritName": "Tada Kapotasana",
+    "categories": [
+      "BALANCING_POSES",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Revolved Pigeon Pose",
+    "sanskritName": "Parivrtta Kapotasana",
+    "categories": [
+      "HIP_OPENERS",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Revolved Seated Straddle Pose Variation Forward Bend Flow",
+    "sanskritName": "Parivrtta Upavistha Konasana Variation Forward Bend Vinyasa",
+    "categories": [
+      "FORWARD_BENDS",
+      "SEATED",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Low Lunge Pose Hands Behind Head Cat Cow Flow",
+    "sanskritName": "Anjaneyasana Hasta Sirsa Bitilasana Marjaryasana Vinyasa",
+    "categories": [
+      "BACKBENDS",
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Horse Pose Side Stretch Hand On Floor",
+    "sanskritName": "Vatayanasana Side Stretch Hand On Floor",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Bear Pose Arms Out",
+    "sanskritName": "Bhallukasana Prasarita Hasta",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Woodchopper Pose Flow",
+    "sanskritName": "Kashtha Takshanasana Flow",
+    "categories": [
+      "BACKBENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "One Legged Mountain Pose Side Bend",
+    "sanskritName": "Eka Pada Parsva Tadasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Revolved High Lunge High Lunge Pose Vapoariation Arms Behind Flow",
+    "sanskritName": "Parivrtta Ashtachandrasana Ashta Chandrasana Variation Hasta Behind Vinyasa",
+    "categories": [
+      "LUNGES",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Half Moon Pose Block Wall",
+    "sanskritName": "Ardha Chandrasana Block Wall",
+    "categories": [
+      "ARM_BALANCES",
+      "BALANCING_POSES"
+    ]
+  },
+  {
+    "name": "Horse Pose Flexed Wrists",
+    "sanskritName": "Vatayanasana Flexed Wrists",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Dead Bug Pose Variation",
+    "sanskritName": "Stambhasana Variation",
+    "categories": [
+      "SUPINE"
+    ]
+  },
+  {
+    "name": "Cobra Pose Variation Elbows Back",
+    "sanskritName": "Bhujangasana Variation Elbows Back",
+    "categories": [
+      "ABDOMINALS",
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Feathered Peacock Pose Prepation At Wall",
+    "sanskritName": "Pincha Mayurasana Prepation At Wall",
+    "categories": [
+      "ARM_BALANCES",
+      "INVERSIONS"
+    ]
+  },
+  {
+    "name": "Side Lunge Forward Fold Pose Flow",
+    "sanskritName": null,
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Revolved Half Bound Forward Fold Pose",
+    "sanskritName": "Parivrtta Ardha Baddha Paschimottanasana",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Extended Side Angle Pose Hand In Front I",
+    "sanskritName": "Utthita Parsvakonasana Hasta In Front I",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Extended Side Angle Pose Variation Elbow",
+    "sanskritName": "Utthita Parsvakonasana Variation Elbow",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Upward Abdominal Lock Close Up",
+    "sanskritName": "Uddiyana Bandha Close Up",
+    "categories": [
+      "BALANCING_POSES"
+    ]
+  },
+  {
+    "name": "Upward Facing Dog Pose Leg To Side",
+    "sanskritName": "Urdhva Mukha Svanasana Leg To Side",
+    "categories": [
+      "BACKBENDS"
+    ]
+  },
+  {
+    "name": "Easy Side Reclining Pose",
+    "sanskritName": "Easy Vishnuasana",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Half Boat Pose Flow With Ball",
+    "sanskritName": "Ardha Navasana Vinyasa Ball",
+    "categories": [
+      "ABDOMINALS"
+    ]
+  },
+  {
+    "name": "Elephant Pose",
+    "sanskritName": "Gaja Vadivu",
+    "categories": [
+      "ARM_BALANCES"
+    ]
+  },
+  {
+    "name": "Revolved Standing Forward Fold Pose Both Hands To Feet",
+    "sanskritName": "Parivrtta Uttanasana Dwi Hasta Pada",
+    "categories": [
+      "FORWARD_BENDS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Turbo Dog Pose",
+    "sanskritName": null,
+    "categories": [
+      "INVERSIONS"
+    ]
+  },
+  {
+    "name": "Revolved Crescent Low Lunge Pose Hand Knee",
+    "sanskritName": "Parivrtta Anjaneyasana Hasta Janu",
+    "categories": [
+      "LUNGES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "Mongoose Pose",
+    "sanskritName": "Nakulasana",
+    "categories": [
+      "HIP_OPENERS",
+      "SEATED"
+    ]
+  },
+  {
+    "name": "Revolved Low Lunge Pose Hip Floor",
+    "sanskritName": "Parivrtta Anjaneyasana Kati Floor",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES",
+      "TWISTS"
+    ]
+  },
+  {
+    "name": "High Lunge Pose Toes Curled Arms Extended Up",
+    "sanskritName": "Ashta Chandrasana Padanguli Utthita Hasta",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Standing Side Lunge Pose Forward Bend Cow Face Arms",
+    "sanskritName": "Utthita Skandasana Uttanasana Hasta Gomukhasana",
+    "categories": [
+      "HIP_OPENERS",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Brolga Pose",
+    "sanskritName": "Ardha Navasana Pada Vrksasana Variation",
+    "categories": [
+      "BALANCING_POSES",
+      "STANDING_POSES"
+    ]
+  },
+  {
+    "name": "Head To Ankle Prep Pose",
+    "sanskritName": "Virabhadrasana Ii Uttanasana Eka Hasta Janu",
+    "categories": [
+      "BALANCING_POSES",
+      "FORWARD_BENDS"
+    ]
+  }
+]
