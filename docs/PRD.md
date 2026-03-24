@@ -147,11 +147,15 @@ Each sequence entry (future):
 | Arm Balances |
 | Backbends |
 | Balancing Poses |
+| Forward Bends |
 | Hip Openers |
 | Inversions |
 | Lunges |
 | Restorative |
+| Seated |
 | Standing Poses |
+| Supine |
+| Twists |
 
 #### 4.3.2 Pose Card
 
@@ -168,20 +172,10 @@ Each pose card displays the following:
 
 #### 4.3.3 Initial Pose Data
 
-Default poses to seed for MVP (focused on core Forrest Yoga poses):
-
-| Pose Name | Categories | Level |
-|-----------|------------|-------|
-| Crow Pose | Arm Balances, Balancing Poses | Intermediate |
-| Side Crow | Arm Balances, Balancing Poses | Advanced |
-| Headstand | Inversions, Balancing Poses | Advanced |
-| Forearm Stand | Inversions, Arm Balances | Advanced |
-| Turbo Dog | Inversions | Intermediate |
-| Dolphin Pose | Inversions | Beginner |
-| Wheel Pose | Backbends | Intermediate |
-| Camel Pose | Backbends | Intermediate |
-| Dancer Pose | Balancing Poses, Standing Poses | Intermediate |
-| Standing Split | Balancing Poses, Standing Poses | Intermediate |
+297 Forrest Yoga poses seeded from `scripts/forrest-poses.json`, each with:
+- English name and Sanskrit name
+- One or more categories (auto-assigned via `scripts/assign-categories.ts`)
+- Tarot card illustration generated via OpenAI `gpt-image-1.5` (`scripts/generate-pose-images.ts`)
 
 ---
 
@@ -202,7 +196,8 @@ poses
 - updated_at: timestamp
 
 enum PoseCategory: ABDOMINALS | ARM_BALANCES | BACKBENDS | BALANCING_POSES |
-                   HIP_OPENERS | INVERSIONS | LUNGES | RESTORATIVE | STANDING_POSES
+                   FORWARD_BENDS | HIP_OPENERS | INVERSIONS | LUNGES | RESTORATIVE |
+                   SEATED | STANDING_POSES | SUPINE | TWISTS
 enum PoseLevel: BEGINNER | INTERMEDIATE | ADVANCED
 ```
 
