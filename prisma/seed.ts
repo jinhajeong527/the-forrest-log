@@ -1,40 +1,49 @@
 import "dotenv/config";
+import * as fs from "fs";
+import * as path from "path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient, PoseCategory, PoseLevel } from "@/lib/generated/prisma/client";
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 const prisma = new PrismaClient({ adapter });
 
-const poses = [
-  {
-    name: "Downward Facing Dog",
-    sanskritName: "Adho Mukha Svanasana",
-    categories: [PoseCategory.INVERSIONS],
+interface PoseEntry {
+  name: string;
+  sanskritName: string | null;
+  categories: string[];
+  imageRef?: string | null;
+}
+
+function toSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .trim();
+}
+
+const IMAGES_DIR = path.join(process.cwd(), "public/pose-images");
+const POSES_JSON = path.join(process.cwd(), "scripts/forrest-poses.json");
+
+const poseEntries: PoseEntry[] = JSON.parse(fs.readFileSync(POSES_JSON, "utf-8"));
+
+const poses = poseEntries.map((entry, i) => {
+  const number = i + 1;
+  const slug = toSlug(entry.name);
+  const filename = `${number}-${slug}.webp`;
+  const imageExists = fs.existsSync(path.join(IMAGES_DIR, filename));
+
+  return {
+    name: entry.name,
+    sanskritName: entry.sanskritName ?? null,
+    categories: entry.categories.filter((c): c is PoseCategory =>
+      Object.values(PoseCategory).includes(c as PoseCategory)
+    ),
     level: PoseLevel.BEGINNER,
-    imageUrl: "/pose-images/1-downward-pacing-dog.webp",
-  },
-  {
-    name: "Corpse Pose",
-    sanskritName: "Shavasana",
-    categories: [PoseCategory.RESTORATIVE],
-    level: PoseLevel.BEGINNER,
-    imageUrl: "/pose-images/2-corpse-pose.webp",
-  },
-  {
-    name: "Mountain Pose",
-    sanskritName: "Tadasana",
-    categories: [PoseCategory.STANDING_POSES],
-    level: PoseLevel.BEGINNER,
-    imageUrl: "/pose-images/3-mountain-pose.webp",
-  },
-  {
-    name: "Standing Forward Fold",
-    sanskritName: "Uttanasana",
-    categories: [PoseCategory.STANDING_POSES, PoseCategory.INVERSIONS],
-    level: PoseLevel.BEGINNER,
-    imageUrl: "/pose-images/4-standing-forward-fold-pose.webp",
-  },
-];
+    imageUrl: imageExists ? `/pose-images/${filename}` : null,
+  };
+});
 
 async function main() {
   console.log("Resetting poses...");
@@ -42,7 +51,9 @@ async function main() {
 
   console.log("Seeding poses...");
   await prisma.pose.createMany({ data: poses });
-  console.log(`✅ ${poses.length} poses seeded.`);
+
+  const withImages = poses.filter((p) => p.imageUrl).length;
+  console.log(`✅ ${poses.length} poses seeded (${withImages} with images).`);
 }
 
 main()
