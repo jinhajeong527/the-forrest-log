@@ -11,7 +11,6 @@
     "name": "Corpse Pose",
     "sanskritName": "Shavasana",
     "categories": [
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -20,7 +19,6 @@
     "sanskritName": "Tadasana",
     "categories": [
       "BALANCING_POSES",
-      "RESTORATIVE",
       "STANDING_POSES"
     ]
   },
@@ -29,7 +27,6 @@
     "sanskritName": "Uttanasana",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -37,14 +34,13 @@
     "name": "Table Top Pose",
     "sanskritName": "Bharmanasana",
     "categories": [
-      "BALANCING_POSES"
+      "LUNGES"
     ]
   },
   {
     "name": "Warrior Pose Ii",
     "sanskritName": "Virabhadrasana Ii",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -52,7 +48,6 @@
     "name": "Cat Cow Pose",
     "sanskritName": "Bitilasana Marjaryasana",
     "categories": [
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -68,8 +63,6 @@
     "name": "Wind Release Pose",
     "sanskritName": "Pawanmuktasana",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -77,16 +70,13 @@
     "name": "Child Pose",
     "sanskritName": "Balasana",
     "categories": [
-      "HIP_OPENERS",
-      "LUNGES",
-      "RESTORATIVE"
+      "LUNGES"
     ]
   },
   {
     "name": "Easy Pose",
     "sanskritName": "Sukhasana",
     "categories": [
-      "RESTORATIVE",
       "SEATED"
     ]
   },
@@ -95,9 +85,7 @@
     "sanskritName": "Prasarita Balasana",
     "categories": [
       "ABDOMINALS",
-      "FORWARD_BENDS",
-      "HIP_OPENERS",
-      "RESTORATIVE"
+      "FORWARD_BENDS"
     ]
   },
   {
@@ -111,7 +99,6 @@
     "name": "High Lunge Pose",
     "sanskritName": "Ashta Chandrasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -119,7 +106,6 @@
     "name": "Three Legged Downward Facing Dog Pose",
     "sanskritName": "Tri Pada Adho Mukha Svanasana",
     "categories": [
-      "HIP_OPENERS",
       "INVERSIONS"
     ]
   },
@@ -127,7 +113,6 @@
     "name": "Chair Pose",
     "sanskritName": "Utkatasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -136,7 +121,6 @@
     "sanskritName": "Anjaneyasana",
     "categories": [
       "BACKBENDS",
-      "HIP_OPENERS",
       "LUNGES",
       "STANDING_POSES"
     ]
@@ -145,7 +129,6 @@
     "name": "Warrior Pose I",
     "sanskritName": "Virabhadrasana I",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -154,7 +137,6 @@
     "sanskritName": "Viparita Virabhadrasana",
     "categories": [
       "BACKBENDS",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -162,7 +144,6 @@
     "name": "Staff Pose",
     "sanskritName": "Dandasana",
     "categories": [
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -178,7 +159,6 @@
     "name": "Happy Baby Pose",
     "sanskritName": "Ananda Balasana",
     "categories": [
-      "HIP_OPENERS",
       "SUPINE"
     ]
   },
@@ -217,7 +197,6 @@
     "sanskritName": "Malasana",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "SEATED",
       "STANDING_POSES"
     ]
@@ -227,7 +206,6 @@
     "sanskritName": "Prasarita Padottanasana",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -236,7 +214,6 @@
     "sanskritName": "Paschimottanasana",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -244,7 +221,6 @@
     "name": "Bound Angle Pose",
     "sanskritName": "Baddha Konasana",
     "categories": [
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -253,7 +229,6 @@
     "sanskritName": "Vrksasana",
     "categories": [
       "BALANCING_POSES",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -261,7 +236,6 @@
     "name": "Puppy Dog Pose",
     "sanskritName": "Uttana Shishosana",
     "categories": [
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -277,7 +251,6 @@
     "name": "Supine Spinal Twist Yoga Pose I",
     "sanskritName": "Supta Matsyendrasana I",
     "categories": [
-      "HIP_OPENERS",
       "SUPINE",
       "TWISTS"
     ]
@@ -294,8 +267,6 @@
     "name": "Reverse Pigeon Pose",
     "sanskritName": "Sucirandhrasana",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -311,8 +282,6 @@
     "name": "Half Wind Release Pose",
     "sanskritName": "Ardha Pavan Muktasana",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -321,7 +290,6 @@
     "sanskritName": "Virabhadrasana Iii",
     "categories": [
       "BALANCING_POSES",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -330,7 +298,6 @@
     "sanskritName": "Janu Sirsasana",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -338,16 +305,14 @@
     "name": "Three Legged Downward Facing Dog Pose Tiger Curl Pose Flow",
     "sanskritName": "Tri Pada Adho Mukha Svanasana Phalakasana Knee To Nose Vinyasa",
     "categories": [
-      "ARM_BALANCES",
-      "HIP_OPENERS"
+      "ARM_BALANCES"
     ]
   },
   {
     "name": "Crocodile Pose",
     "sanskritName": "Makarasana",
     "categories": [
-      "ABDOMINALS",
-      "RESTORATIVE"
+      "ABDOMINALS"
     ]
   },
   {
@@ -355,7 +320,6 @@
     "sanskritName": "Ardha Kapotasana",
     "categories": [
       "BACKBENDS",
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -363,7 +327,6 @@
     "name": "Thread The Needle Pose Flow",
     "sanskritName": "Urdhva Mukha Pasasana Flow",
     "categories": [
-      "HIP_OPENERS",
       "LUNGES",
       "TWISTS"
     ]
@@ -372,8 +335,6 @@
     "name": "Reclining Bound Angle Pose",
     "sanskritName": "Supta Baddha Konasana",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -381,7 +342,6 @@
     "name": "Easy Pose Variation Side Bend",
     "sanskritName": "Sukhasana Variation Side Bend",
     "categories": [
-      "RESTORATIVE",
       "SEATED"
     ]
   },
@@ -389,7 +349,6 @@
     "name": "Extended Side Angle Pose",
     "sanskritName": "Utthita Parsvakonasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -397,7 +356,6 @@
     "name": "Full Body Stretch Pose",
     "sanskritName": "Supta Utthita Tadasana",
     "categories": [
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -405,7 +363,6 @@
     "name": "Revolved Lunge Pose",
     "sanskritName": "Parivrtta Utthita Ashwa Sanchalanasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES",
       "TWISTS"
     ]
@@ -423,7 +380,6 @@
     "categories": [
       "ARM_BALANCES",
       "BALANCING_POSES",
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -431,7 +387,6 @@
     "name": "Goddess Pose",
     "sanskritName": "Utkata Konasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -454,7 +409,6 @@
     "name": "Crescent Low Lunge Pose Variation Knee On Floor",
     "sanskritName": "Ashwa Sanchalanasana",
     "categories": [
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -464,7 +418,6 @@
     "categories": [
       "ARM_BALANCES",
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -479,7 +432,6 @@
     "name": "Revolved Chair Pose",
     "sanskritName": "Parivrtta Utkatasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES",
       "TWISTS"
     ]
@@ -488,7 +440,6 @@
     "name": "Extended Side Angle Pose Variation Elbow Arm",
     "sanskritName": "Utthita Parsvakonasana Variation Elbow Arm",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -496,7 +447,6 @@
     "name": "Five Pointed Star Pose",
     "sanskritName": "Utthita Tadasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -504,7 +454,6 @@
     "name": "Thunderbolt Pose",
     "sanskritName": "Vajrasana",
     "categories": [
-      "RESTORATIVE",
       "SEATED"
     ]
   },
@@ -513,7 +462,6 @@
     "sanskritName": "Dandayamana Bharmanasana Knee To Nose Vinyasa",
     "categories": [
       "ARM_BALANCES",
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -522,7 +470,6 @@
     "sanskritName": "Navasana",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -538,7 +485,6 @@
     "name": "Seated Cat Cow Pose",
     "sanskritName": "Upavistha Bitilasana Marjaryasana",
     "categories": [
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -547,7 +493,6 @@
     "sanskritName": "Ardha Hanumanasana",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "LUNGES",
       "SEATED"
     ]
@@ -556,7 +501,6 @@
     "name": "Seated Shoulder Rolls",
     "sanskritName": "Upavishta Skandha Vrtta",
     "categories": [
-      "RESTORATIVE",
       "SEATED"
     ]
   },
@@ -580,7 +524,6 @@
     "name": "Constructive Rest Pose",
     "sanskritName": "Savasana Variation Bent Legs",
     "categories": [
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -595,8 +538,6 @@
     "name": "Supine Windshield Wiper Twist Pose",
     "sanskritName": "Supta Parivrtta Sucirandhrasana Variation",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE",
       "TWISTS"
     ]
@@ -605,7 +546,6 @@
     "name": "Half Moon Pose",
     "sanskritName": "Ardha Chandrasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -632,9 +572,7 @@
     "sanskritName": "Kapotasana II",
     "categories": [
       "ABDOMINALS",
-      "FORWARD_BENDS",
-      "HIP_OPENERS",
-      "RESTORATIVE"
+      "FORWARD_BENDS"
     ]
   },
   {
@@ -649,7 +587,6 @@
     "name": "Easy Pose Warm Up Flow",
     "sanskritName": "Sukhasana Warm Up Vinyasa",
     "categories": [
-      "RESTORATIVE",
       "SEATED"
     ]
   },
@@ -665,7 +602,6 @@
     "sanskritName": "Garudasana",
     "categories": [
       "BALANCING_POSES",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -681,8 +617,6 @@
     "name": "Seated Windshield Wiper Pose",
     "sanskritName": "Upavistha Jathara Parivartanasana",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SEATED",
       "TWISTS"
     ]
@@ -707,7 +641,6 @@
     "name": "Seated Neck Rolls",
     "sanskritName": "Greeva Sanchalana",
     "categories": [
-      "RESTORATIVE",
       "SEATED"
     ]
   },
@@ -716,7 +649,6 @@
     "sanskritName": "Upavistha Konasana",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -740,7 +672,6 @@
     "sanskritName": "Utthan Pristhasana",
     "categories": [
       "ARM_BALANCES",
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -755,7 +686,6 @@
     "name": "Revolved Side Angle Pose",
     "sanskritName": "Parivrtta Parsvakonasana Namaste Hands",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES",
       "TWISTS"
     ]
@@ -779,7 +709,6 @@
     "name": "Five Pointed Star Pose Arms Up",
     "sanskritName": "Utthita Tadasana Arms Up",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -804,7 +733,6 @@
     "name": "Revolved Low Lunge Pose Knee On The Floor",
     "sanskritName": "Parivrtta Anjaneyasana Knee On The Floor",
     "categories": [
-      "HIP_OPENERS",
       "LUNGES",
       "STANDING_POSES",
       "TWISTS"
@@ -821,9 +749,7 @@
   {
     "name": "Meditation",
     "sanskritName": "Dhyanam",
-    "categories": [
-      "RESTORATIVE"
-    ]
+    "categories": []
   },
   {
     "name": "Palm Tree Pose",
@@ -917,7 +843,6 @@
     "categories": [
       "ARM_BALANCES",
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1003,7 +928,6 @@
     "name": "Revolved Low Lunge Pose Variation 1",
     "sanskritName": "Parivrtta Anjaneyasana Variation 1",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES",
       "TWISTS"
     ]
@@ -1029,7 +953,6 @@
     "name": "Revolved High Lunge Pose",
     "sanskritName": "Parivrtta Ashtachandrasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES",
       "TWISTS"
     ]
@@ -1045,7 +968,6 @@
     "name": "Bridge Pose Block",
     "sanskritName": "Setubandha Sarvangasana Block",
     "categories": [
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -1070,8 +992,6 @@
     "name": "Reclining Eagle Spinal Twist Pose",
     "sanskritName": "Supta Parivrtta Garudasana",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE",
       "TWISTS"
     ]
@@ -1142,8 +1062,6 @@
     "name": "Reclined Big Toe Pose Straps",
     "sanskritName": "Supta Padangusthasana A Straps",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -1221,7 +1139,6 @@
     "sanskritName": "Malasana Uttanasana Vinyasa",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1291,8 +1208,7 @@
     "name": "Sphinx Pose With Half Frog Pose Legs",
     "sanskritName": "Salamba Bhujangasana Ardha Bhekasana Pada",
     "categories": [
-      "ABDOMINALS",
-      "RESTORATIVE"
+      "ABDOMINALS"
     ]
   },
   {
@@ -1316,7 +1232,8 @@
     "name": "Wrist Joint Rotation",
     "sanskritName": "Manibandha Chakra",
     "categories": [
-      "RESTORATIVE"
+      "SEATED",
+      "STANDING_POSES"
     ]
   },
   {
@@ -1324,7 +1241,6 @@
     "sanskritName": "Malasana Variation",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "SEATED",
       "STANDING_POSES"
     ]
@@ -1372,7 +1288,6 @@
     "name": "Crescent Low Lunge Pose Block",
     "sanskritName": null,
     "categories": [
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -1380,15 +1295,13 @@
     "name": "Reverse Corpse Pose",
     "sanskritName": "Advasana",
     "categories": [
-      "ABDOMINALS",
-      "RESTORATIVE"
+      "ABDOMINALS"
     ]
   },
   {
     "name": "Revolved Chair Pose Easy Stretch",
     "sanskritName": "Parivrtta Utkatasana Sukha Stretch",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES",
       "TWISTS"
     ]
@@ -1453,7 +1366,6 @@
     "name": "Revolved Chair Pose Variation",
     "sanskritName": "Parivrtta Utkatasana Variation",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES",
       "TWISTS"
     ]
@@ -1462,8 +1374,6 @@
     "name": "Supine Spinal Twist Eagle Legs Pose",
     "sanskritName": "Supta Matsyendrasana Garuda Legs Asana",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE",
       "TWISTS"
     ]
@@ -1486,8 +1396,7 @@
     "name": "Circle Of Joy",
     "sanskritName": "Ananda Mandalasana",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE"
+      "SEATED"
     ]
   },
   {
@@ -1502,7 +1411,6 @@
     "name": "Frog Pose I",
     "sanskritName": "Mandukasana I",
     "categories": [
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -1562,8 +1470,7 @@
     "name": "Puppy Dog Pose Blocks",
     "sanskritName": "Uttana Shishosana Blocks",
     "categories": [
-      "LUNGES",
-      "RESTORATIVE"
+      "LUNGES"
     ]
   },
   {
@@ -1585,7 +1492,6 @@
     "name": "Cat Cow Pose With Leg To Side",
     "sanskritName": "Bitilasana Marjaryasana With Leg To Side",
     "categories": [
-      "HIP_OPENERS",
       "LUNGES",
       "TWISTS"
     ]
@@ -1602,7 +1508,6 @@
     "name": "Warrior Pose I Eagle Arms",
     "sanskritName": "Virabhadrasana I Garudasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1663,7 +1568,6 @@
     "name": "Nectar Of The Moon Pose Ii",
     "sanskritName": "Somachandrasana Ii",
     "categories": [
-      "HIP_OPENERS",
       "SUPINE"
     ]
   },
@@ -1687,7 +1591,6 @@
     "sanskritName": "Vrksasana Side Bend",
     "categories": [
       "BALANCING_POSES",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1703,7 +1606,7 @@
     "name": "Shoulder Rolls Bent Elbows Variation Close Up",
     "sanskritName": "Skandha Chakra Variation Close Up",
     "categories": [
-      "RESTORATIVE"
+      "SEATED"
     ]
   },
   {
@@ -1717,7 +1620,6 @@
     "name": "Extended Side Angle Pose Block",
     "sanskritName": "Utthita Parsvakonasana Block",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1725,7 +1627,7 @@
     "name": "Eagle Arms Close Up",
     "sanskritName": "Hasta Garuda Close Up",
     "categories": [
-      "RESTORATIVE"
+      "TWISTS"
     ]
   },
   {
@@ -1733,7 +1635,6 @@
     "sanskritName": "Viparita Virabhadrasana Wrist Hold",
     "categories": [
       "BACKBENDS",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1741,7 +1642,6 @@
     "name": "Seated Ear To Shoulder Pose",
     "sanskritName": "Sukhasana Ear To Shoulder",
     "categories": [
-      "RESTORATIVE",
       "SEATED"
     ]
   },
@@ -1750,7 +1650,6 @@
     "sanskritName": "Malasana Hands Forward",
     "categories": [
       "FORWARD_BENDS",
-      "HIP_OPENERS",
       "SEATED",
       "STANDING_POSES"
     ]
@@ -1760,7 +1659,6 @@
     "sanskritName": null,
     "categories": [
       "LUNGES",
-      "RESTORATIVE",
       "TWISTS"
     ]
   },
@@ -1775,8 +1673,6 @@
     "name": "Eye Of The Needle Pose Variation Ii",
     "sanskritName": "Sucirandhrasana Variation Ii",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -1792,7 +1688,6 @@
     "name": "Horse Pose Side Stretch",
     "sanskritName": "Vatayanasana Side Stretch",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1836,7 +1731,6 @@
     "name": "Chair Pose Downward Facing Dog Pose Flow",
     "sanskritName": "Vinyasa Utkatasana Adho Mukha Svanasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1844,7 +1738,6 @@
     "name": "Crescent Low Lunge Pose Lateral Extension Knee Over Ankle",
     "sanskritName": "Anjaneyasana Lateral Extension Knee Over Ankle",
     "categories": [
-      "HIP_OPENERS",
       "LUNGES"
     ]
   },
@@ -1852,7 +1745,6 @@
     "name": "Easy Pose Block",
     "sanskritName": "Sukhasana Block",
     "categories": [
-      "RESTORATIVE",
       "SEATED"
     ]
   },
@@ -1860,7 +1752,6 @@
     "name": "Extended Side Angle Pose Variation Hand In Front",
     "sanskritName": "Utthita Parsvakonasana Variation Hand In Front",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1898,7 +1789,6 @@
     "sanskritName": "Parivrtta Utthan Pristhasana",
     "categories": [
       "ARM_BALANCES",
-      "HIP_OPENERS",
       "LUNGES",
       "TWISTS"
     ]
@@ -1939,7 +1829,6 @@
     "sanskritName": null,
     "categories": [
       "BACKBENDS",
-      "HIP_OPENERS",
       "LUNGES",
       "STANDING_POSES"
     ]
@@ -1971,7 +1860,6 @@
     "name": "Warrior Pose I Triangle Pose Flow",
     "sanskritName": "Virabhadrasana I Trikonasana Vinyasa",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -1994,7 +1882,6 @@
     "sanskritName": "Tadasana Urdhva Hastasana Uttanasana Hasta Vinyasa",
     "categories": [
       "BALANCING_POSES",
-      "RESTORATIVE",
       "STANDING_POSES"
     ]
   },
@@ -2011,7 +1898,6 @@
     "name": "Goddess Pose Variation Forward Bend On Heels",
     "sanskritName": "Utkata Konasana Variation Forward Bend On Heels",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -2034,8 +1920,6 @@
     "name": "Half Wind Release Pose Nose To Knee Foot Raised",
     "sanskritName": "Ardha Pavan Muktasana Nose To Knee Foot Raised",
     "categories": [
-      "HIP_OPENERS",
-      "RESTORATIVE",
       "SUPINE"
     ]
   },
@@ -2112,7 +1996,6 @@
     "sanskritName": "Anjaneyasana Saral Parivrtta Parsvakonasana Vinyasa",
     "categories": [
       "BACKBENDS",
-      "HIP_OPENERS",
       "LUNGES",
       "TWISTS"
     ]
@@ -2129,7 +2012,7 @@
     "name": "Shoulder Rolls Close Up",
     "sanskritName": "Skandha Vrtta Close Up",
     "categories": [
-      "RESTORATIVE"
+      "SEATED"
     ]
   },
   {
@@ -2145,7 +2028,6 @@
     "sanskritName": "Tada Kapotasana",
     "categories": [
       "BALANCING_POSES",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -2153,7 +2035,7 @@
     "name": "Revolved Pigeon Pose",
     "sanskritName": "Parivrtta Kapotasana",
     "categories": [
-      "HIP_OPENERS",
+      "SEATED",
       "TWISTS"
     ]
   },
@@ -2171,7 +2053,6 @@
     "sanskritName": "Anjaneyasana Hasta Sirsa Bitilasana Marjaryasana Vinyasa",
     "categories": [
       "BACKBENDS",
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -2179,7 +2060,6 @@
     "name": "Horse Pose Side Stretch Hand On Floor",
     "sanskritName": "Vatayanasana Side Stretch Hand On Floor",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -2227,7 +2107,6 @@
     "name": "Horse Pose Flexed Wrists",
     "sanskritName": "Vatayanasana Flexed Wrists",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -2275,7 +2154,6 @@
     "name": "Extended Side Angle Pose Hand In Front I",
     "sanskritName": "Utthita Parsvakonasana Hasta In Front I",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -2283,7 +2161,6 @@
     "name": "Extended Side Angle Pose Variation Elbow",
     "sanskritName": "Utthita Parsvakonasana Variation Elbow",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -2351,7 +2228,6 @@
     "name": "Mongoose Pose",
     "sanskritName": "Nakulasana",
     "categories": [
-      "HIP_OPENERS",
       "SEATED"
     ]
   },
@@ -2359,7 +2235,6 @@
     "name": "Revolved Low Lunge Pose Hip Floor",
     "sanskritName": "Parivrtta Anjaneyasana Kati Floor",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES",
       "TWISTS"
     ]
@@ -2368,7 +2243,6 @@
     "name": "High Lunge Pose Toes Curled Arms Extended Up",
     "sanskritName": "Ashta Chandrasana Padanguli Utthita Hasta",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
@@ -2376,7 +2250,6 @@
     "name": "Standing Side Lunge Pose Forward Bend Cow Face Arms",
     "sanskritName": "Utthita Skandasana Uttanasana Hasta Gomukhasana",
     "categories": [
-      "HIP_OPENERS",
       "STANDING_POSES"
     ]
   },
