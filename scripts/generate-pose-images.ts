@@ -107,13 +107,12 @@ function sleep(ms: number) {
 
 async function generateImage(
   client: OpenAI,
-  fallbackFile: File,
+  referenceFile: File,
   pose: PoseEntry,
   number: number,
   outputPath: string,
   retries = 0
 ): Promise<void> {
-  const referenceFile = fallbackFile;
   try {
     const response = await client.images.edit({
       model: "gpt-image-1.5",
@@ -166,7 +165,7 @@ async function main() {
   const client = dryRun ? null : new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   const referenceBuffer = fs.readFileSync(REFERENCE_IMAGE);
-  const fallbackFile = new File([referenceBuffer], "reference.png", { type: "image/png" });
+  const referenceFile = new File([referenceBuffer], "reference.png", { type: "image/png" });
 
   console.log(`Generating poses ${startIdx}–${endIdx} of ${poses.length} total`);
   if (dryRun) console.log("DRY RUN — no API calls will be made\n");
@@ -196,7 +195,7 @@ async function main() {
     }
 
     try {
-      await generateImage(client!, fallbackFile, pose, number, outputPath);
+      await generateImage(client!, referenceFile, pose, number, outputPath);
       console.log(`       ✓ saved`);
       generated++;
     } catch (err) {

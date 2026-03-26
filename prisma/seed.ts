@@ -11,7 +11,6 @@ interface PoseEntry {
   name: string;
   sanskritName: string | null;
   categories: string[];
-  imageRef?: string | null;
 }
 
 function toSlug(name: string): string {
