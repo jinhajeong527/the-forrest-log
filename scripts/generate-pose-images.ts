@@ -23,7 +23,7 @@ import OpenAI from "openai";
 
 const OUTPUT_DIR = path.join(process.cwd(), "public/pose-images");
 const POSES_JSON = path.join(process.cwd(), "scripts/forrest-poses.json");
-const REFERENCE_IMAGE = path.join(process.cwd(), "docs/1. downward pacing dog.png");
+const REFERENCE_IMAGE = path.join(process.cwd(), "docs/card-template.png");
 
 // Delay between API calls to avoid rate limiting (ms)
 const DELAY_MS = 3000;
@@ -47,25 +47,48 @@ function toSlug(name: string): string {
 
 function buildPrompt(pose: PoseEntry, index: number): string {
   const roman = toRoman(index);
-  return `Vintage tarot card style illustration of a yoga pose.
-A single vertical tarot card centered in the image. The card should occupy about 85-90% of the image height with a small margin on all sides. The full tarot card must be completely visible — do not crop any part of the card.
-The tarot card has an ornate Art Nouveau style border with a rounded arch at the top. The border is decorated with floral and botanical engravings. There are decorative crystals at the bottom left and bottom right corners of the frame.
-Inside the card is a warm beige parchment background with subtle small star symbols and vintage paper texture.
-Layout from top to bottom:
-- At the very top inside the arch: Roman numeral "${roman}" at the top center.
-- Below the arch: a curved scroll banner containing the Sanskrit pose name written in Latin/Roman alphabet letters only (NOT Devanagari or any other non-Latin script): "${pose.sanskritName}".
-- Two crescent moons are positioned directly below the Sanskrit banner, one on the left and one on the right, symmetrically. They curl inward facing each other, attached to the lower edge of the banner. The moons must always appear in this fixed position between the Sanskrit banner and the center illustration. Do not move them elsewhere.
-- Center area: leave clear open space for the character illustration.
-- At the bottom of the card: a scroll banner containing the English pose name in capital letters: "${pose.name.toUpperCase()}".
-The layout is symmetrical and centered. The top and bottom banners must not overlap with the center illustration.
-In the center, a female yoga practitioner performing the "${pose.name}" yoga pose. The body position must accurately represent the ${pose.name} — generate the correct pose based on its name.
-She wears an orange yoga top and beige leggings. Hair is tied in a long low ponytail.
-The practitioner's face must be clearly rendered with distinct facial features — eyes, nose, and lips visible, even in profile or three-quarter view. Do not leave the face vague, blurred, or featureless.
-Illustration style: clean line art, thin ink lines, minimal shading, flat colors, slightly textured like vintage print, vintage engraving style.
-Color palette: warm sepia, beige, and soft orange tones.
-Vertical composition, tarot card poster layout.
-No background outside the card — transparent or plain background only.`
-;
+  return `Vintage tarot card illustration.
+A single vertical tarot card centered in the image.
+The full card must be fully visible and not cropped.
+CARD LAYOUT (fixed structure):
+Top to bottom layout must always be:
+1. Roman numeral at the top center: "${roman}"
+2. Curved banner with Sanskrit name: "${pose.sanskritName}"
+3. Two crescent moons directly under the banner, left and right, symmetrical
+4. Empty center area for the pose illustration
+5. Bottom scroll banner with English pose name in capital letters: "${pose.name.toUpperCase()}"
+The layout must be symmetrical and centered.
+The center illustration must not overlap with the top or bottom banners.
+CENTER ILLUSTRATION:
+A female yoga practitioner performing the "${pose.name}" yoga pose.
+The pose must be anatomically correct and clearly recognizable.
+She wears an orange yoga top and beige leggings.
+Long low ponytail.
+FACE STYLE:
+Simple illustrated face.
+Clean line art face.
+Minimal facial details.
+Calm expression.
+Eyes gently open.
+Small nose and simple mouth.
+Flat illustration style face.
+CARD FRAME STYLE:
+Use the provided reference image as the visual style and card frame template.
+Ornate Art Nouveau tarot card frame.
+Floral botanical decorations.
+Crystals at bottom corners.
+Warm beige parchment background.
+Subtle stars and vintage paper texture.
+Symmetrical vintage tarot design.
+ILLUSTRATION STYLE:
+Clean line art.
+Thin ink lines.
+Minimal shading.
+Flat colors.
+Vintage engraving illustration.
+Sepia and warm beige color palette.
+Vertical tarot card composition.
+Plain or transparent background outside the card.`;
 }
 
 function toRoman(n: number): string {
@@ -84,12 +107,13 @@ function sleep(ms: number) {
 
 async function generateImage(
   client: OpenAI,
-  referenceFile: File,
+  fallbackFile: File,
   pose: PoseEntry,
   number: number,
   outputPath: string,
   retries = 0
 ): Promise<void> {
+  const referenceFile = fallbackFile;
   try {
     const response = await client.images.edit({
       model: "gpt-image-1.5",
@@ -142,7 +166,7 @@ async function main() {
   const client = dryRun ? null : new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   const referenceBuffer = fs.readFileSync(REFERENCE_IMAGE);
-  const referenceFile = new File([referenceBuffer], "reference.png", { type: "image/png" });
+  const fallbackFile = new File([referenceBuffer], "reference.png", { type: "image/png" });
 
   console.log(`Generating poses ${startIdx}–${endIdx} of ${poses.length} total`);
   if (dryRun) console.log("DRY RUN — no API calls will be made\n");
@@ -172,7 +196,7 @@ async function main() {
     }
 
     try {
-      await generateImage(client!, referenceFile, pose, number, outputPath);
+      await generateImage(client!, fallbackFile, pose, number, outputPath);
       console.log(`       ✓ saved`);
       generated++;
     } catch (err) {
