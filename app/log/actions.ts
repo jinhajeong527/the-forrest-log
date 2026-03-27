@@ -90,28 +90,30 @@ export async function createPracticeLog(
   const { date, theme, peakPoseId, conditionBefore, conditionAfter, props, notes, sequence } =
     result.data;
 
-  const log = await prisma.practiceLog.create({
-    data: {
-      userId,
-      date: new Date(date),
-      theme: theme || null,
-      peakPoseId: toNullableUuid(peakPoseId),
-      conditionBefore: conditionBefore ?? null,
-      conditionAfter: conditionAfter ?? null,
-      props,
-      notes: notes || null,
-    },
-  });
-
-  if (sequence.length > 0) {
-    await prisma.sequenceLog.createMany({
-      data: sequence.map((s) => ({
-        practiceLogId: log.id,
-        poseId: s.poseId,
-        order: s.order,
-      })),
+  await prisma.$transaction(async (tx) => {
+    const log = await tx.practiceLog.create({
+      data: {
+        userId,
+        date: new Date(date),
+        theme: theme || null,
+        peakPoseId: toNullableUuid(peakPoseId),
+        conditionBefore: conditionBefore ?? null,
+        conditionAfter: conditionAfter ?? null,
+        props,
+        notes: notes || null,
+      },
     });
-  }
+
+    if (sequence.length > 0) {
+      await tx.sequenceLog.createMany({
+        data: sequence.map((s) => ({
+          practiceLogId: log.id,
+          poseId: s.poseId,
+          order: s.order,
+        })),
+      });
+    }
+  });
 
   return { success: true };
 }
@@ -147,16 +149,20 @@ export async function updatePracticeLog(
 
   if (count === 0) redirect("/log");
 
-  await prisma.sequenceLog.deleteMany({ where: { practiceLogId: id } });
-  if (sequence.length > 0) {
-    await prisma.sequenceLog.createMany({
-      data: sequence.map((s) => ({
-        practiceLogId: id,
-        poseId: s.poseId,
-        order: s.order,
-      })),
-    });
-  }
+  await prisma.$transaction([
+    prisma.sequenceLog.deleteMany({ where: { practiceLogId: id } }),
+    ...(sequence.length > 0
+      ? [
+          prisma.sequenceLog.createMany({
+            data: sequence.map((s) => ({
+              practiceLogId: id,
+              poseId: s.poseId,
+              order: s.order,
+            })),
+          }),
+        ]
+      : []),
+  ]);
 
   return { success: true };
 }

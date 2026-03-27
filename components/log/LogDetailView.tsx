@@ -176,7 +176,7 @@ export default function LogDetailView({
             </span>
             <div className="flex gap-2 overflow-x-auto scrollbar-thin pb-1">
               {log.sequence.map((item, idx) => (
-                <div key={item.poseId + idx} className="relative flex-shrink-0 w-16">
+                <div key={`${item.poseId}-${idx}`} className="relative flex-shrink-0 w-16">
                   <span className="absolute top-1 left-1 z-10 font-cormorant text-[10px] text-foreground/50 leading-none">
                     {idx + 1}
                   </span>

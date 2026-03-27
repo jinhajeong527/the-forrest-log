@@ -40,9 +40,9 @@ export default async function LogPage() {
     }),
   ]);
 
-  const logs = rawLogs.map((l) => ({
-    ...l,
-    sequence: l.sequenceLogs.map((s) => ({
+  const logs = rawLogs.map(({ sequenceLogs, ...rest }) => ({
+    ...rest,
+    sequence: sequenceLogs.map((s) => ({
       poseId: s.poseId,
       name: s.pose.name,
       imageUrl: s.pose.imageUrl,
