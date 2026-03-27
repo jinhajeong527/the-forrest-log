@@ -1,23 +1,9 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { PoseCategory } from "@/lib/generated/prisma/client";
 import PoseCard from "@/components/poses/PoseCard";
 import CategoryFilter from "@/components/poses/CategoryFilter";
+import { CATEGORIES, pillClass } from "@/components/poses/categories";
 import PageHeader from "@/components/common/PageHeader";
-
-const CATEGORIES = [
-  { value: PoseCategory.ABDOMINALS, label: "Abdominals" },
-  { value: PoseCategory.ARM_BALANCES, label: "Arm Balances" },
-  { value: PoseCategory.BACKBENDS, label: "Backbends" },
-  { value: PoseCategory.BALANCING_POSES, label: "Balancing Poses" },
-  { value: PoseCategory.FORWARD_BENDS, label: "Forward Bends" },
-  { value: PoseCategory.INVERSIONS, label: "Inversions" },
-  { value: PoseCategory.LUNGES, label: "Lunges" },
-  { value: PoseCategory.SEATED, label: "Seated" },
-  { value: PoseCategory.STANDING_POSES, label: "Standing Poses" },
-  { value: PoseCategory.SUPINE, label: "Supine" },
-  { value: PoseCategory.TWISTS, label: "Twists" },
-];
 
 interface PageProps {
   searchParams: Promise<{ category?: string }>;
@@ -44,7 +30,20 @@ export default async function PosesPage({ searchParams }: PageProps) {
       {/* Category filter bar */}
       <div className="border-b border-foreground/10">
         <div className="max-w-5xl mx-auto px-4 py-5">
-          <CategoryFilter categories={CATEGORIES} activeCategory={activeCategory} />
+          <CategoryFilter>
+            <Link href="/poses" className={pillClass(!activeCategory)}>
+              All
+            </Link>
+            {CATEGORIES.map((cat) => (
+              <Link
+                key={cat.value}
+                href={`/poses?category=${cat.value}`}
+                className={pillClass(activeCategory === cat.value)}
+              >
+                {cat.label}
+              </Link>
+            ))}
+          </CategoryFilter>
         </div>
       </div>
 

@@ -27,7 +27,7 @@ export default async function LogPage() {
       orderBy: { date: "desc" },
     }),
     prisma.pose.findMany({
-      select: { id: true, name: true, imageUrl: true },
+      select: { id: true, name: true, imageUrl: true, categories: true },
       orderBy: { name: "asc" },
     }),
   ]);

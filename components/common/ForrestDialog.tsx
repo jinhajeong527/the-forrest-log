@@ -31,7 +31,7 @@ export function ForrestDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className={cn(
-          "sm:max-w-2xl max-h-[90vh] overflow-y-auto rounded-sm",
+          "sm:max-w-2xl max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-sm",
           "border-t-2 border-t-primary",
           className
         )}

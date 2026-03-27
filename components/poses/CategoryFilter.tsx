@@ -1,29 +1,13 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-interface Category {
-  value: string;
-  label: string;
-}
 
 interface CategoryFilterProps {
-  categories: Category[];
-  activeCategory: string | null;
+  children: React.ReactNode;
 }
 
-const pillClass = (active: boolean) =>
-  cn(
-    "flex-shrink-0 px-4 py-2 rounded-sm font-cormorant font-semibold text-base transition-all duration-300 border",
-    active
-      ? "bg-primary text-primary-foreground border-primary"
-      : "bg-secondary text-secondary-foreground hover:border-foreground/40 hover:text-foreground"
-  );
-
-export default function CategoryFilter({ categories, activeCategory }: CategoryFilterProps) {
+export default function CategoryFilter({ children }: CategoryFilterProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(false);
@@ -53,7 +37,7 @@ export default function CategoryFilter({ categories, activeCategory }: CategoryF
   };
 
   return (
-    <div className="relative flex items-center" role="navigation" aria-label="Filter by category">
+    <div className="relative flex items-center w-full overflow-hidden" role="navigation" aria-label="Filter by category">
       {showLeft && (
         <button
           onClick={() => scroll("left")}
@@ -68,18 +52,7 @@ export default function CategoryFilter({ categories, activeCategory }: CategoryF
         ref={scrollRef}
         className="flex gap-2 overflow-x-auto scrollbar-none"
       >
-        <Link href="/poses" className={pillClass(!activeCategory)}>
-          All
-        </Link>
-        {categories.map((cat) => (
-          <Link
-            key={cat.value}
-            href={`/poses?category=${cat.value}`}
-            className={pillClass(activeCategory === cat.value)}
-          >
-            {cat.label}
-          </Link>
-        ))}
+        {children}
       </div>
 
       {showRight && (
