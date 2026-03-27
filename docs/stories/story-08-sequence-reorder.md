@@ -1,7 +1,7 @@
 # Story 08: Sequence drag-and-drop reorder
 
 **Epic:** epic-04-sequence-log
-**Status:** planned
+**Status:** done
 **PR:** —
 
 ## Goal
@@ -10,10 +10,10 @@ As a practitioner, I want to reorder poses in my sequence via drag-and-drop, so 
 
 ## Acceptance Criteria
 
-- [ ] Sequence list items are draggable
-- [ ] Dropping reorders the list and updates the `order` field
-- [ ] Order is persisted on save
+- [x] Sequence list items are draggable
+- [x] Dropping reorders the list and updates the `order` field
+- [x] Order is persisted on save
 
 ## Notes
 
-- Consider `@dnd-kit/core` (compatible with shadcn ecosystem)
+- Uses `@dnd-kit/core` + `@dnd-kit/sortable` with `horizontalListSortingStrategy`

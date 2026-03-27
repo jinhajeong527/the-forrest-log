@@ -24,6 +24,7 @@ export type FullLogEntry = {
   conditionAfter: number | null;
   props: Prop[];
   notes: string | null;
+  sequence: { poseId: string; name: string; imageUrl: string | null; order: number }[];
 };
 
 export type PoseOption = { id: string; name: string; imageUrl: string | null; categories: string[] };

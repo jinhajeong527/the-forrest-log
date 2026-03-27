@@ -10,7 +10,7 @@ export default async function LogPage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const [logs, poses] = await Promise.all([
+  const [rawLogs, poses] = await Promise.all([
     prisma.practiceLog.findMany({
       where: { userId: user.id },
       select: {
@@ -23,6 +23,14 @@ export default async function LogPage() {
         conditionAfter: true,
         props: true,
         notes: true,
+        sequenceLogs: {
+          select: {
+            poseId: true,
+            order: true,
+            pose: { select: { name: true, imageUrl: true } },
+          },
+          orderBy: { order: "asc" },
+        },
       },
       orderBy: { date: "desc" },
     }),
@@ -31,6 +39,16 @@ export default async function LogPage() {
       orderBy: { name: "asc" },
     }),
   ]);
+
+  const logs = rawLogs.map(({ sequenceLogs, ...rest }) => ({
+    ...rest,
+    sequence: sequenceLogs.map((s) => ({
+      poseId: s.poseId,
+      name: s.pose.name,
+      imageUrl: s.pose.imageUrl,
+      order: s.order,
+    })),
+  }));
 
   return <LogPageContainer logs={logs} poses={poses} />;
 }

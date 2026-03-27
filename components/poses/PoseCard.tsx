@@ -5,9 +5,10 @@ interface PoseCardProps {
   name: string;
   imageUrl?: string | null;
   className?: string;
+  showLabel?: boolean;
 }
 
-export default function PoseCard({ name, imageUrl, className }: PoseCardProps) {
+export default function PoseCard({ name, imageUrl, className, showLabel = true }: PoseCardProps) {
   return (
     <div
       className={cn(
@@ -24,7 +25,7 @@ export default function PoseCard({ name, imageUrl, className }: PoseCardProps) {
           "border border-foreground/25 rounded-sm",
           "bg-[oklch(0.95_0.018_78)]",
           "shadow-[2px_4px_14px_oklch(0.30_0.05_45/0.2)]",
-          "px-2 py-3"
+          showLabel ? "px-2 py-3" : "px-1.5 py-1.5"
         )}
         aria-label={name}
       >
@@ -96,11 +97,13 @@ export default function PoseCard({ name, imageUrl, className }: PoseCardProps) {
         </div>
 
         {/* Bottom label */}
-        <div className="w-full pt-2 text-center border-t border-foreground/12">
-          <p className="font-cormorant italic text-foreground text-sm tracking-wide leading-tight">
-            {name}
-          </p>
-        </div>
+        {showLabel && (
+          <div className="w-full pt-2 text-center border-t border-foreground/12">
+            <p className="font-cormorant italic text-foreground text-sm tracking-wide leading-tight">
+              {name}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

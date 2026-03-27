@@ -1,9 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { ConditionStars } from "@/components/common/ConditionStars";
 import { ForrestButton } from "@/components/common/ForrestButton";
 import { PanelHeader } from "@/components/common/PanelHeader";
 import PoseCard from "@/components/poses/PoseCard";
+import SequencePoseCard from "@/components/log/SequencePoseCard";
 import { PropSvg, PROP_LABELS, PROP_ORDER } from "@/components/log/PropSvg";
 import { type FullLogEntry } from "@/components/log/LogPageContainer";
 
@@ -25,21 +27,6 @@ function formatDate(date: Date): string {
   });
 }
 
-function ConditionPips({ value }: { value: number }) {
-  return (
-    <div className="flex gap-1.5">
-      {[1, 2, 3, 4, 5].map((n) => (
-        <div
-          key={n}
-          className={cn(
-            "h-2 w-2 rounded-full transition-colors",
-            n <= value ? "bg-primary" : "bg-foreground/15"
-          )}
-        />
-      ))}
-    </div>
-  );
-}
 
 export default function LogDetailView({
   log,
@@ -85,7 +72,7 @@ export default function LogDetailView({
         </p>
       )}
       {/* Detail body — scrollable */}
-      <div className="flex-1 overflow-y-auto px-8 py-6">
+      <div className="flex-1 overflow-y-auto scrollbar-none px-8 py-6">
         {/* Main layout: left content + right pose card */}
         <div className="relative pr-48">
           {/* Pose card — top right */}
@@ -131,7 +118,7 @@ export default function LogDetailView({
                     <span className="font-cormorant italic text-xs text-muted-foreground uppercase tracking-widest">
                       Before
                     </span>
-                    <ConditionPips value={log.conditionBefore} />
+                    <ConditionStars value={log.conditionBefore} />
                   </div>
                 )}
                 {log.conditionAfter !== null && (
@@ -139,7 +126,7 @@ export default function LogDetailView({
                     <span className="font-cormorant italic text-xs text-muted-foreground uppercase tracking-widest">
                       After
                     </span>
-                    <ConditionPips value={log.conditionAfter} />
+                    <ConditionStars value={log.conditionAfter} />
                   </div>
                 )}
               </div>
@@ -175,6 +162,25 @@ export default function LogDetailView({
                   <span className="text-[10px] font-sans tracking-wide">
                     {PROP_LABELS[prop]}
                   </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Sequence */}
+        {log.sequence.length > 0 && (
+          <div className="flex flex-col gap-3 mt-8">
+            <span className="font-cormorant italic text-xs text-muted-foreground uppercase tracking-widest">
+              Sequence
+            </span>
+            <div className="flex gap-2 overflow-x-auto scrollbar-thin pb-1">
+              {log.sequence.map((item, idx) => (
+                <div key={`${item.poseId}-${idx}`} className="relative flex-shrink-0 w-16">
+                  <span className="absolute top-1 left-1 z-10 font-cormorant text-[10px] text-foreground/50 leading-none">
+                    {idx + 1}
+                  </span>
+                  <SequencePoseCard name={item.name} imageUrl={item.imageUrl} />
                 </div>
               ))}
             </div>
