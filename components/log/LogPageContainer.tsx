@@ -26,7 +26,7 @@ export type FullLogEntry = {
   notes: string | null;
 };
 
-export type PoseOption = { id: string; name: string; imageUrl: string | null };
+export type PoseOption = { id: string; name: string; imageUrl: string | null; categories: string[] };
 
 type PanelMode = "list" | "create" | "view" | "edit";
 
