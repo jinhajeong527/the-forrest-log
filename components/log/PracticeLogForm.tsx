@@ -11,7 +11,9 @@ import { type ActionState } from "@/app/log/actions";
 import { type Prop } from "@/lib/generated/prisma/client";
 import { type FullLogEntry, type PoseOption } from "@/components/log/LogPageContainer";
 import PosePicker from "@/components/log/PosePicker";
+import SequencePicker, { type SequenceItem } from "@/components/log/SequencePicker";
 import { PropSvg, PROP_LABELS, PROP_ORDER } from "@/components/log/PropSvg";
+import { STAR_PATH } from "@/components/common/ConditionStars";
 
 // ─── Star rating ──────────────────────────────────────────────────────────────
 
@@ -44,7 +46,7 @@ function StarRating({
             )}
             aria-hidden
           >
-            <path d="M11 1.5l2.53 5.13 5.66.82-4.1 3.99.97 5.63L11 14.27l-5.06 2.8.97-5.63-4.1-3.99 5.66-.82z" />
+            <path d={STAR_PATH} />
           </svg>
         </button>
       ))}
@@ -190,7 +192,16 @@ export default function PracticeLogForm({
         }
       : null
   );
+  const [sequence, setSequence] = useState<SequenceItem[]>(
+    defaultValues?.sequence?.map((s) => ({
+      id: crypto.randomUUID(),
+      poseId: s.poseId,
+      name: s.name,
+      imageUrl: s.imageUrl,
+    })) ?? []
+  );
   const [pickerOpen, setPickerOpen] = useState(false);
+  const [sequencePickerOpen, setSequencePickerOpen] = useState(false);
   const [datePickerOpen, setDatePickerOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date>(() => {
     const dateStr =
@@ -220,6 +231,13 @@ export default function PracticeLogForm({
           setSelectedPose(pose);
           setPickerOpen(false);
         }}
+      />
+      <SequencePicker
+        open={sequencePickerOpen}
+        onOpenChange={setSequencePickerOpen}
+        poses={poses}
+        initialSequence={sequence}
+        onSave={setSequence}
       />
 
       <form action={formAction} className="flex flex-col h-full">
@@ -258,6 +276,15 @@ export default function PracticeLogForm({
           ))}
           {selectedPose && (
             <input type="hidden" name="peakPoseId" value={selectedPose.id} />
+          )}
+          {sequence.length > 0 && (
+            <input
+              type="hidden"
+              name="sequence"
+              value={JSON.stringify(
+                sequence.map((s, i) => ({ poseId: s.poseId, order: i + 1 }))
+              )}
+            />
           )}
 
           {/* Main layout: left fields + right pose card */}
@@ -390,14 +417,14 @@ export default function PracticeLogForm({
             </div>
           </div>
 
-          {/* Sequence placeholder */}
+          {/* Sequence */}
           <div className="mt-8">
             <button
               type="button"
-              disabled
-              className="px-4 py-1.5 rounded-sm border border-foreground/20 text-xs font-sans text-foreground/40 cursor-not-allowed"
+              onClick={() => setSequencePickerOpen(true)}
+              className="px-4 py-1.5 rounded-sm border border-foreground/20 text-xs font-sans text-foreground/60 hover:text-foreground hover:border-foreground/40 transition-colors"
             >
-              Sequence
+              {sequence.length > 0 ? `Sequence (${sequence.length})` : "Sequence"}
             </button>
           </div>
 
@@ -414,8 +441,8 @@ export default function PracticeLogForm({
                 ? "Saving..."
                 : "Updating..."
               : mode === "create"
-                ? "Save Entry"
-                : "Update Entry"}
+                ? "Save Log"
+                : "Update Log"}
           </ForrestButton>
         </div>
       </form>

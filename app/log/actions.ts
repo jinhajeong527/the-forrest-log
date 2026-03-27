@@ -10,6 +10,11 @@ import { Prop } from "@/lib/generated/prisma/client";
 // Schema
 // ---------------------------------------------------------------------------
 
+const sequenceItemSchema = z.object({
+  poseId: z.uuid(),
+  order: z.coerce.number().int().min(1),
+});
+
 const practiceLogSchema = z.object({
   date: z.string().refine((v) => !isNaN(Date.parse(v)), "Invalid date"),
   theme: z.string().optional(),
@@ -18,6 +23,17 @@ const practiceLogSchema = z.object({
   conditionAfter: z.coerce.number().int().min(1).max(5).optional(),
   props: z.array(z.enum(Prop)).default([]),
   notes: z.string().optional(),
+  sequence: z
+    .string()
+    .optional()
+    .transform((v) => {
+      if (!v) return [];
+      try {
+        return z.array(sequenceItemSchema).parse(JSON.parse(v));
+      } catch {
+        return [];
+      }
+    }),
 });
 
 export type ActionState = {
@@ -48,6 +64,7 @@ function parseFormData(formData: FormData) {
     conditionAfter: formData.get("conditionAfter") || undefined,
     props: formData.getAll("props"),
     notes: (formData.get("notes") as string) || undefined,
+    sequence: (formData.get("sequence") as string) || undefined,
   };
 }
 
@@ -70,10 +87,10 @@ export async function createPracticeLog(
     return { errors: z.flattenError(result.error).fieldErrors };
   }
 
-  const { date, theme, peakPoseId, conditionBefore, conditionAfter, props, notes } =
+  const { date, theme, peakPoseId, conditionBefore, conditionAfter, props, notes, sequence } =
     result.data;
 
-  await prisma.practiceLog.create({
+  const log = await prisma.practiceLog.create({
     data: {
       userId,
       date: new Date(date),
@@ -85,6 +102,16 @@ export async function createPracticeLog(
       notes: notes || null,
     },
   });
+
+  if (sequence.length > 0) {
+    await prisma.sequenceLog.createMany({
+      data: sequence.map((s) => ({
+        practiceLogId: log.id,
+        poseId: s.poseId,
+        order: s.order,
+      })),
+    });
+  }
 
   return { success: true };
 }
@@ -102,7 +129,7 @@ export async function updatePracticeLog(
     return { errors: z.flattenError(result.error).fieldErrors };
   }
 
-  const { date, theme, peakPoseId, conditionBefore, conditionAfter, props, notes } =
+  const { date, theme, peakPoseId, conditionBefore, conditionAfter, props, notes, sequence } =
     result.data;
 
   const { count } = await prisma.practiceLog.updateMany({
@@ -119,6 +146,17 @@ export async function updatePracticeLog(
   });
 
   if (count === 0) redirect("/log");
+
+  await prisma.sequenceLog.deleteMany({ where: { practiceLogId: id } });
+  if (sequence.length > 0) {
+    await prisma.sequenceLog.createMany({
+      data: sequence.map((s) => ({
+        practiceLogId: id,
+        poseId: s.poseId,
+        order: s.order,
+      })),
+    });
+  }
 
   return { success: true };
 }
