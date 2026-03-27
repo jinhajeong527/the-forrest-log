@@ -242,7 +242,7 @@ export default function PracticeLogForm({
         />
 
         {/* Form body — scrollable */}
-        <div className="flex-1 overflow-y-auto px-8 py-6">
+        <div className="flex-1 overflow-y-auto scrollbar-none px-8 py-6">
           {/* Hidden inputs */}
           {mode === "edit" && defaultValues?.id && (
             <input type="hidden" name="id" value={defaultValues.id} />
