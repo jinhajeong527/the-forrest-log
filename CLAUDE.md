@@ -36,14 +36,20 @@ Users can log their practice sessions, build sequences using a tarot card-style 
   - **Zod** (app level) — user-facing error messages
   - **DB CHECK constraint** — defense against direct DB access that bypasses the app
 
-### Migrations (raw SQL)
-Prisma does not support raw SQL features in `schema.prisma` (CHECK constraints, RLS policies, triggers, etc.).
-When raw SQL is required, use `--create-only` to generate an empty migration file, add the SQL manually, then apply:
+### Migrations
+Normal schema changes (no raw SQL):
+```bash
+pnpm prisma migrate dev   # creates migration file, applies it, and runs prisma generate
+```
 
+> Note: `migrate dev` creates a shadow database to diff changes. It will fail if any migration
+> references Supabase-specific schemas (e.g. `auth.uid()` in RLS policies) — use `--create-only` in that case.
+
+When raw SQL is required (CHECK constraints, RLS policies, triggers, etc.):
 ```bash
 pnpm prisma migrate dev --create-only --name <description>
 # edit the generated migration.sql, then:
-pnpm prisma migrate dev
+pnpm db:migrate   # applies migration + runs prisma generate
 ```
 
 Common cases and examples:
@@ -90,6 +96,20 @@ CREATE POLICY "practice_logs_own" ON practice_logs
   }
   ```
 
+### Prisma Imports
+- **Server components / server actions**: import from `@/lib/generated/prisma/client` as usual
+- **Client components (enum values only)**: import from `@/lib/generated/prisma/enums` — pure JS, no Node.js dependencies, safe for the client bundle
+  ```ts
+  // ✅ client component — enum only
+  import { PoseCategory } from "@/lib/generated/prisma/enums";
+
+  // ✅ server component / action — full client
+  import { PrismaClient, PoseCategory } from "@/lib/generated/prisma/client";
+
+  // ❌ avoid — importing from client in a client component pulls in Node.js modules
+  import { PoseCategory } from "@/lib/generated/prisma/client";
+  ```
+
 ### Zod
 - Import from `"zod/v4"`, not `"zod"`
 - Before using any Zod method, check `node_modules/zod/src/v4/` for `@deprecated` JSDoc — don't rely on docs
@@ -106,6 +126,14 @@ CREATE POLICY "practice_logs_own" ON practice_logs
   const propValues = ["FOAM_ROLLER", "BLOCK", ...] as const;
   z.array(z.enum(propValues))
   ```
+
+### Documentation
+When adding or changing features, check and update the relevant docs:
+- `docs/PRD.md` — feature requirements and epics overview
+- `docs/epics/` — epic-level goals and scope
+- `docs/stories/` — story-level acceptance criteria; update ACs when behavior changes
+- `docs/decisions/` — ADRs for architectural decisions
+- `docs/design-references/` — UI reference images for new screens
 
 ---
 
