@@ -1,6 +1,6 @@
 # The Forrest Log
 
-**Live:** https://the-forrest-log.vercel.app
+**[Try it now](https://the-forrest-log.vercel.app)**
 
 A personal practice tracking web app for Forrest Yoga practitioners. Log sessions, build pose sequences using a tarot card-style library, and reflect on your growth over time.
 
