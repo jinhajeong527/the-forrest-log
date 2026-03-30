@@ -10,7 +10,8 @@
     "db:migrate": "dotenvx run -f .env -- prisma migrate deploy && prisma generate",
     "db:seed": "tsx prisma/seed.ts",
     "pose:import": "tsx scripts/import-pose-images.ts",
-    "pose:generate": "tsx scripts/generate-pose-images.ts"
+    "pose:generate": "dotenvx run -f .env -- tsx scripts/generate-pose-images.ts",
+    "pose:sync-images": "dotenvx run -f .env -- tsx scripts/sync-pose-images.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
