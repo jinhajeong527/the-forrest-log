@@ -180,6 +180,19 @@ Produce production-grade, functional code in every output:
 
 Elegance comes from restraint and precision, not decoration.
 
+### Component Wrappers
+
+Every interactive element that needs to carry the project's design tokens must live in `components/common/` as a named wrapper — never styled inline at each usage site.
+
+**Rule**: If a shadcn primitive or raw HTML element needs project-specific styling (font, color, border radius, size), extract it as a `components/common/` wrapper before using it in a feature component.
+
+Examples of what belongs in `components/common/`:
+- `ForrestButton` — wraps shadcn `Button` with Cormorant font, earthy palette
+- `ForrestInput` — wraps shadcn `Input` with Cormorant italic, muted border, earthy focus ring
+- `ForrestSearchInput` — wraps `ForrestInput` with a leading search icon, used wherever a search field appears
+
+**How to apply**: Before writing a styled `<input>` or `<Input className="...font-cormorant...">` inside a feature component, check if a matching wrapper already exists in `components/common/`. If it doesn't, create it there first, then use it.
+
 ---
 
 ## What to Avoid (Summary)
