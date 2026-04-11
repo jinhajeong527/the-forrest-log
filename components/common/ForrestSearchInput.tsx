@@ -1,8 +1,9 @@
+import type { ComponentProps } from "react";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
-interface Props extends React.ComponentProps<"input"> {
+interface Props extends ComponentProps<"input"> {
   containerClassName?: string;
 }
 
