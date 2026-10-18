@@ -4,12 +4,14 @@
 
 withUser passes a server-verified user ID using parameterized transaction-local settings compatible with auth.uid(). Protected operations use the same transaction client. Existing ownership checks remain; related log and sequence writes are atomic.
 
-## Database setup (not executed)
+## Database setup
 
-Apply existing migrations through DIRECT_URL and verify RLS and policies on practice_logs and sequence_logs. In Supabase SQL Editor, create one runtime login, replacing the password placeholder:
+Apply migrations through DIRECT_URL first. The poses migration creates app_user as NOLOGIN if absent, enables poses RLS, and permits that role to SELECT every pose. Existing credentials are preserved. The named policy is safely replaced if already applied manually in production.
+
+After migrations, provision the runtime login in SQL Editor. Do not commit real passwords:
 
 ```sql
-CREATE ROLE app_user LOGIN PASSWORD '<generated-password>'
+ALTER ROLE app_user LOGIN PASSWORD '<APP_DB_PASSWORD>'
   NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOBYPASSRLS;
 GRANT CONNECT ON DATABASE postgres TO app_user;
 GRANT USAGE ON SCHEMA public, auth TO app_user;
@@ -27,7 +29,7 @@ Use a separate test database and the restricted runtime login. Verify own CRUD, 
 
 ## Deploy
 
-Deploy code first. Replace runtime DATABASE_URL credentials with app_user (shared pooler username: app_user.PROJECT_REF), keep DIRECT_URL privileged, and redeploy. Smoke-test login and log CRUD. To roll back, restore the previous runtime connection and redeploy; application checks remain but database RLS is bypassed again.
+Apply migrations and provision app_user first. Save app_user credentials in Vercel Production DATABASE_URL (shared pooler username: app_user.PROJECT_REF). Keep DIRECT_URL privileged and retain the production Supabase URL/public key. Deploy updated code and environment together; do not redeploy old code with the restricted connection. Verify login and log CRUD, including sequence pose names. To roll back, restore the previous runtime connection and redeploy; application checks remain but database RLS is bypassed again.
 
 Code preparation alone does not activate RLS protection while runtime still uses postgres. User context is not authentication; the server remains the trust boundary.
 
@@ -35,3 +37,7 @@ Code preparation alone does not activate RLS protection while runtime still uses
 
 Run `npx tsx --test tests/prisma-user.test.ts tests/prisma-rls.integration.test.ts`.
 The integration check is skipped unless RLS_TEST_DATABASE_URL explicitly points to a dedicated migrated test database with the restricted login and at least one seeded pose. It creates temporary records for two generated user IDs and removes them afterward. Do not point it at production. Unit tests verify helper behavior; only the database integration check verifies RLS enforcement.
+
+## Production incident: 2026-10-18
+
+After runtime account switching, a sequence pose relation returned null and rendering failed at s.pose.name. The user confirmed that enabling poses RLS and adding poses_app_user_read resolved the error. The migration records the same policy for reproducible development and production setup. Apply it normally through Prisma even where the SQL was already applied manually; it preserves existing login credentials and reconciles the named policy. Do not seed production.

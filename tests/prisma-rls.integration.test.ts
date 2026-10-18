@@ -16,13 +16,13 @@ test("restricted runtime enforces two-user RLS and clears pooled context", { ski
   const logB = randomUUID();
   const sequenceId = randomUUID();
   // A dedicated fixture pose must be supplied: restricted runtime cannot create poses.
-  const pose = await prisma.pose.findFirst({ select: { id: true } });
+  const pose = await prisma.pose.findFirst({ select: { id: true, name: true, imageUrl: true } });
   assert.ok(pose, "Seed at least one pose in the test database");
   try {
     const roles = await prisma.$queryRaw<Array<{ unsafe: boolean }>>`
       SELECT (r.rolsuper OR r.rolbypassrls OR EXISTS (
         SELECT 1 FROM pg_class c WHERE c.oid IN
-        ('public.practice_logs'::regclass, 'public.sequence_logs'::regclass)
+        ('public.practice_logs'::regclass, 'public.sequence_logs'::regclass, 'public.poses'::regclass)
         AND (c.relowner = r.oid OR NOT c.relrowsecurity)
       )) AS unsafe FROM pg_roles r WHERE r.rolname = current_user`;
     assert.equal(roles[0].unsafe, false, "Use a restricted non-owner role with RLS enabled");
@@ -36,6 +36,18 @@ test("restricted runtime enforces two-user RLS and clears pooled context", { ski
       assert.equal((await tx.practiceLog.deleteMany({ where: { id: logB } })).count, 0);
       await tx.practiceLog.update({ where: { id: logA }, data: { notes: "allowed" } });
       await tx.sequenceLog.create({ data: { id: sequenceId, practiceLogId: logA, poseId: pose.id, order: 1 } });
+    });
+    // Mirror the production relation read that previously returned a null pose.
+    await withUser(a, async tx => {
+      const log = await tx.practiceLog.findUniqueOrThrow({
+        where: { id: logA },
+        select: { sequenceLogs: { select: {
+          id: true, pose: { select: { id: true, name: true, imageUrl: true } },
+        } } },
+      });
+      const entry = log.sequenceLogs.find(row => row.id === sequenceId);
+      assert.ok(entry, "Own sequence must be returned");
+      assert.deepEqual(entry.pose, pose, "Pose relation must be readable with RLS enabled");
     });
     // PostgreSQL generates the ID when B creates their sequence entry.
     const bSequence = await withUser(b, tx => tx.sequenceLog.create({

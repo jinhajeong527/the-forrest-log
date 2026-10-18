@@ -9,7 +9,7 @@ Protect practice and sequence logs with database-level RLS even when an applicat
 
 ## Context
 
-Supabase Auth verifies users; Prisma accesses data. The local connection and the supplied production connection setting use postgres, which bypasses RLS. Existing RLS migrations use auth.uid(), but their deployment must be verified; Prisma does not currently pass user context to the database.
+Supabase Auth verifies users; Prisma accesses data. withUser now passes verified user context to Prisma transactions. Development uses app_user; production role switching and a pose-read policy were applied during rollout.
 
 ## Steps
 
@@ -17,7 +17,7 @@ Supabase Auth verifies users; Prisma accesses data. The local connection and the
 2. Create one shared runtime DB login with minimal permissions, NOSUPERUSER and NOBYPASSRLS, no table ownership, and no ability to assume privileged roles. Keep the privileged migration connection separate.
 3. Add a common Prisma helper that passes the server-verified user ID using parameterized, transaction-local settings compatible with auth.uid(). Run protected queries through the same transaction client.
 4. Move log reads and writes into the helper while preserving existing ownership checks. Keep related log and sequence writes atomic.
-5. Validate in a test database, then deploy the code, switch the runtime DATABASE_URL to the restricted login, and redeploy. Keep migration DIRECT_URL privileged; retain the previous connection for rollback.
+5. Validate in a test database, then save the restricted runtime DATABASE_URL and deploy the updated code and environment together. Keep migration DIRECT_URL privileged; retain the previous connection for rollback.
 
 ## Acceptance Criteria
 
@@ -31,4 +31,4 @@ Test with two users and the actual restricted runtime role:
 
 ## Progress
 
-Application changes prepared. Database verification and production rollout pending. See [rollout steps](../prisma-rls-rollout.md).
+Development isolation tests passed. Production RLS was confirmed; the user reported that the app_user pose-read policy resolved a rendering error on 2026-10-18. Migration and relation regression coverage added; full production CRUD verification remains pending. See [rollout steps](../prisma-rls-rollout.md).
