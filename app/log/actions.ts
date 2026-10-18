@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { z } from "zod/v4";
 import { createClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
+import { withUser } from "@/lib/prisma-user";
 import { Prop } from "@/lib/generated/prisma/client";
 
 // ---------------------------------------------------------------------------
@@ -90,7 +90,7 @@ export async function createPracticeLog(
   const { date, theme, peakPoseId, conditionBefore, conditionAfter, props, notes, sequence } =
     result.data;
 
-  await prisma.$transaction(async (tx) => {
+  await withUser(userId, async (tx) => {
     const log = await tx.practiceLog.create({
       data: {
         userId,
@@ -134,35 +134,33 @@ export async function updatePracticeLog(
   const { date, theme, peakPoseId, conditionBefore, conditionAfter, props, notes, sequence } =
     result.data;
 
-  const { count } = await prisma.practiceLog.updateMany({
-    where: { id, userId },
-    data: {
-      date: new Date(date),
-      theme: theme || null,
-      peakPoseId: toNullableUuid(peakPoseId),
-      conditionBefore: conditionBefore ?? null,
-      conditionAfter: conditionAfter ?? null,
-      props,
-      notes: notes || null,
-    },
+  const updated = await withUser(userId, async (tx) => {
+    const { count } = await tx.practiceLog.updateMany({
+      where: { id, userId },
+      data: {
+        date: new Date(date),
+        theme: theme || null,
+        peakPoseId: toNullableUuid(peakPoseId),
+        conditionBefore: conditionBefore ?? null,
+        conditionAfter: conditionAfter ?? null,
+        props,
+        notes: notes || null,
+      },
+    });
+    if (count === 0) return false;
+    await tx.sequenceLog.deleteMany({ where: { practiceLogId: id } });
+    if (sequence.length > 0) {
+      await tx.sequenceLog.createMany({
+        data: sequence.map((s) => ({
+          practiceLogId: id,
+          poseId: s.poseId,
+          order: s.order,
+        })),
+      });
+    }
+    return true;
   });
-
-  if (count === 0) redirect("/log");
-
-  await prisma.$transaction([
-    prisma.sequenceLog.deleteMany({ where: { practiceLogId: id } }),
-    ...(sequence.length > 0
-      ? [
-          prisma.sequenceLog.createMany({
-            data: sequence.map((s) => ({
-              practiceLogId: id,
-              poseId: s.poseId,
-              order: s.order,
-            })),
-          }),
-        ]
-      : []),
-  ]);
+  if (!updated) redirect("/log");
 
   return { success: true };
 }
@@ -170,8 +168,10 @@ export async function updatePracticeLog(
 export async function deletePracticeLog(id: string): Promise<void> {
   const userId = await getAuthenticatedUserId();
 
-  const existing = await prisma.practiceLog.findUnique({ where: { id } });
-  if (!existing || existing.userId !== userId) return;
-
-  await prisma.practiceLog.delete({ where: { id } });
+  await withUser(userId, async (tx) => {
+    const existing = await tx.practiceLog.findUnique({ where: { id } });
+    if (!existing || existing.userId !== userId) return;
+    await tx.sequenceLog.deleteMany({ where: { practiceLogId: id } });
+    await tx.practiceLog.delete({ where: { id } });
+  });
 }

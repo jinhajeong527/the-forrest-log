@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
+import { withUser } from "@/lib/prisma-user";
 import LogPageContainer from "@/components/log/LogPageContainer";
 
 export default async function LogPage() {
@@ -10,8 +10,8 @@ export default async function LogPage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const [rawLogs, poses] = await Promise.all([
-    prisma.practiceLog.findMany({
+  const [rawLogs, poses] = await withUser(user.id, (tx) => Promise.all([
+    tx.practiceLog.findMany({
       where: { userId: user.id },
       select: {
         id: true,
@@ -34,11 +34,11 @@ export default async function LogPage() {
       },
       orderBy: { date: "desc" },
     }),
-    prisma.pose.findMany({
+    tx.pose.findMany({
       select: { id: true, name: true, imageUrl: true, categories: true },
       orderBy: { name: "asc" },
     }),
-  ]);
+  ]));
 
   const logs = rawLogs.map(({ sequenceLogs, ...rest }) => ({
     ...rest,
