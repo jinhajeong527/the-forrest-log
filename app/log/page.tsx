@@ -10,9 +10,15 @@ export default async function LogPage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const [rawLogs, poses] = await withUser(user.id, (tx) => Promise.all([
+  const dataPromise = getLogData(user.id);
+
+  return <LogPageContainer dataPromise={dataPromise} />;
+}
+
+async function getLogData(userId: string) {
+  const [rawLogs, poses] = await withUser(userId, (tx) => Promise.all([
     tx.practiceLog.findMany({
-      where: { userId: user.id },
+      where: { userId },
       select: {
         id: true,
         date: true,
@@ -50,5 +56,5 @@ export default async function LogPage() {
     })),
   }));
 
-  return <LogPageContainer logs={logs} poses={poses} />;
+  return { logs, poses };
 }
