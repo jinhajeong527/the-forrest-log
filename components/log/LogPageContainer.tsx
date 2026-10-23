@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useTransition, useCallback, useEffect } from "react";
+import { Suspense, use, useState, useTransition, useCallback, useEffect } from "react";
+import type { ComponentProps, Dispatch, SetStateAction } from "react";
 import { useRouter } from "next/navigation";
-import PageHeader from "@/components/common/PageHeader";
 import LogCalendar from "@/components/log/LogCalendar";
+import LogListLoading from "@/components/log/LogListLoading";
 import LogListView from "@/components/log/LogListView";
 import PracticeLogForm from "@/components/log/PracticeLogForm";
 import LogDetailView from "@/components/log/LogDetailView";
@@ -31,32 +32,85 @@ export type PoseOption = { id: string; name: string; imageUrl: string | null; ca
 
 type PanelMode = "list" | "create" | "view" | "edit";
 
+type LogData = { logs: FullLogEntry[]; poses: PoseOption[] };
+
 interface LogPageContainerProps {
-  logs: FullLogEntry[];
-  poses: PoseOption[];
+  dataPromise: Promise<LogData>;
+}
+
+interface LogContentProps extends LogPageContainerProps {
+  selectedDate: Date | null;
+  setSelectedDate: Dispatch<SetStateAction<Date | null>>;
+  panelMode: PanelMode;
+  setPanelMode: Dispatch<SetStateAction<PanelMode>>;
 }
 
 function toDateKey(date: Date): string {
   return new Date(date).toISOString().slice(0, 10);
 }
 
-export default function LogPageContainer({ logs, poses }: LogPageContainerProps) {
-  const [panelMode, setPanelMode] = useState<PanelMode>("list");
+export default function LogPageContainer({ dataPromise }: LogPageContainerProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [calendarMonth, setCalendarMonth] = useState<Date>(new Date());
+  const [panelMode, setPanelMode] = useState<PanelMode>("list");
+
+  function handleCalendarDayClick(date: Date) {
+    const isSameDate = selectedDate && toDateKey(selectedDate) === toDateKey(date);
+    setSelectedDate(isSameDate ? null : date);
+    if (!isSameDate) setPanelMode("list");
+  }
+
+  const calendarProps = {
+    selectedDate,
+    month: calendarMonth,
+    onDayClick: handleCalendarDayClick,
+    onMonthChange: setCalendarMonth,
+  };
+
+  return (
+    <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex flex-1 overflow-hidden max-w-6xl mx-auto w-full">
+        <aside className="shrink-0 border-r border-foreground/10 p-6 overflow-y-auto hidden md:block">
+          <Suspense fallback={<LogCalendar {...calendarProps} logDateKeys={new Set<string>()} />}>
+            <CalendarWithData {...calendarProps} dataPromise={dataPromise} />
+          </Suspense>
+        </aside>
+        <section className="flex-1 overflow-y-auto">
+          <Suspense fallback={<LogListLoading />}>
+            <LogContent
+              dataPromise={dataPromise}
+              selectedDate={selectedDate}
+              setSelectedDate={setSelectedDate}
+              panelMode={panelMode}
+              setPanelMode={setPanelMode}
+            />
+          </Suspense>
+        </section>
+      </div>
+    </div>
+  );
+}
+
+function CalendarWithData({ dataPromise, ...props }: LogPageContainerProps & Omit<ComponentProps<typeof LogCalendar>, "logDateKeys">) {
+  const { logs } = use(dataPromise);
+  const logDateKeys = new Set(logs.map((log) => toDateKey(log.date)));
+  return <LogCalendar {...props} logDateKeys={logDateKeys} />;
+}
+
+function LogContent({ dataPromise, selectedDate, setSelectedDate, panelMode, setPanelMode }: LogContentProps) {
+  const { logs, poses } = use(dataPromise);
   const [selectedLogId, setSelectedLogId] = useState<string | null>(null);
   const [isDeleting, startDeleteTransition] = useTransition();
   const [deleteError, setDeleteError] = useState<string | null>(null);
   const router = useRouter();
 
   const selectedLog = logs.find((l) => l.id === selectedLogId) ?? null;
-  const logDateKeys = new Set(logs.map((l) => toDateKey(l.date)));
 
   const handleSuccess = useCallback(() => {
     setPanelMode("list");
     setSelectedLogId(null);
     router.refresh();
-  }, [router]);
+  }, [router, setPanelMode]);
 
   function handleEntryClick(id: string) {
     setSelectedLogId(id);
@@ -82,18 +136,7 @@ export default function LogPageContainer({ logs, poses }: LogPageContainerProps)
 
   useEffect(() => {
     if (panelMode === "view" && !selectedLog) setPanelMode("list");
-  }, [panelMode, selectedLog]);
-
-  function handleCalendarDayClick(date: Date) {
-    const key = toDateKey(date);
-    const isSameDate = selectedDate && toDateKey(selectedDate) === key;
-    if (isSameDate) {
-      setSelectedDate(null);
-    } else {
-      setSelectedDate(date);
-      if (panelMode !== "list") setPanelMode("list");
-    }
-  }
+  }, [panelMode, selectedLog, setPanelMode]);
 
   function handleClearDate() {
     setSelectedDate(null);
@@ -104,24 +147,7 @@ export default function LogPageContainer({ logs, poses }: LogPageContainerProps)
     : toDateKey(new Date());
 
   return (
-    <div className="flex flex-col h-dvh bg-background">
-      <PageHeader title="Practice Log" />
-
-      {/* Split view: calendar (left) + panel (right) */}
-      <div className="flex flex-1 overflow-hidden max-w-6xl mx-auto w-full">
-        {/* Left: Calendar panel — hidden on mobile */}
-        <aside className="shrink-0 border-r border-foreground/10 p-6 overflow-y-auto hidden md:block">
-          <LogCalendar
-            logDateKeys={logDateKeys}
-            selectedDate={selectedDate}
-            month={calendarMonth}
-            onDayClick={handleCalendarDayClick}
-            onMonthChange={setCalendarMonth}
-          />
-        </aside>
-
-        {/* Right: Content panel */}
-        <section className="flex-1 overflow-y-auto">
+    <>
           {panelMode === "list" && (
             <LogListView
               logs={logs}
@@ -161,8 +187,6 @@ export default function LogPageContainer({ logs, poses }: LogPageContainerProps)
               onCancel={() => setPanelMode("view")}
             />
           )}
-        </section>
-      </div>
-    </div>
+    </>
   );
 }
