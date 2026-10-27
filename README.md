@@ -21,7 +21,8 @@ A personal practice tracking web app for Forrest Yoga practitioners. Log session
 
 | Area | Technology |
 |------|------------|
-| Framework | Next.js 16 (App Router) |
+| Framework | Next.js 16.4.3 (App Router) |
+| UI Runtime | React + React DOM 19.2.3 |
 | Language | TypeScript |
 | Database | Supabase (PostgreSQL) |
 | ORM | Prisma |
@@ -37,17 +38,17 @@ A personal practice tracking web app for Forrest Yoga practitioners. Log session
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 24 (see `.nvmrc`; Next.js requires 20.9+)
 - pnpm
 - A Supabase project
 
 ### Environment Variables
 
-Create a `.env.local` file:
+Create a `.env` file (also read by the Prisma CLI and seed scripts):
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY=your_supabase_publishable_key
 DATABASE_URL=your_database_url
 DIRECT_URL=your_direct_database_url
 ```
