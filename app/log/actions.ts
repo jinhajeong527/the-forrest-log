@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { z } from "zod/v4";
 import { createClient } from "@/lib/supabase/server";
 import { withUser } from "@/lib/prisma-user";
@@ -115,6 +116,7 @@ export async function createPracticeLog(
     }
   });
 
+  revalidatePath("/log");
   return { success: true };
 }
 
@@ -162,16 +164,20 @@ export async function updatePracticeLog(
   });
   if (!updated) redirect("/log");
 
+  revalidatePath("/log");
   return { success: true };
 }
 
 export async function deletePracticeLog(id: string): Promise<void> {
   const userId = await getAuthenticatedUserId();
 
-  await withUser(userId, async (tx) => {
+  const deleted = await withUser(userId, async (tx) => {
     const existing = await tx.practiceLog.findUnique({ where: { id } });
-    if (!existing || existing.userId !== userId) return;
+    if (!existing || existing.userId !== userId) return false;
     await tx.sequenceLog.deleteMany({ where: { practiceLogId: id } });
     await tx.practiceLog.delete({ where: { id } });
+    return true;
   });
+
+  if (deleted) revalidatePath("/log");
 }
