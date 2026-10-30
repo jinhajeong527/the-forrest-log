@@ -2,7 +2,6 @@
 
 import { Suspense, use, useState, useTransition, useCallback, useEffect } from "react";
 import type { ComponentProps, Dispatch, SetStateAction } from "react";
-import { useRouter } from "next/navigation";
 import LogCalendar from "@/components/log/LogCalendar";
 import LogListLoading from "@/components/log/LogListLoading";
 import LogListView from "@/components/log/LogListView";
@@ -102,15 +101,13 @@ function LogContent({ dataPromise, selectedDate, setSelectedDate, panelMode, set
   const [selectedLogId, setSelectedLogId] = useState<string | null>(null);
   const [isDeleting, startDeleteTransition] = useTransition();
   const [deleteError, setDeleteError] = useState<string | null>(null);
-  const router = useRouter();
 
   const selectedLog = logs.find((l) => l.id === selectedLogId) ?? null;
 
   const handleSuccess = useCallback(() => {
     setPanelMode("list");
     setSelectedLogId(null);
-    router.refresh();
-  }, [router, setPanelMode]);
+  }, [setPanelMode]);
 
   function handleEntryClick(id: string) {
     setSelectedLogId(id);
