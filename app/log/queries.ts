@@ -1,9 +1,10 @@
 import "server-only";
+import { getPoses } from "@/lib/pose-queries";
 import { withUser } from "@/lib/prisma-user";
 
 export async function getPracticeLogPageData(userId: string) {
-  const [rawLogs, poses] = await withUser(userId, (tx) => Promise.all([
-    tx.practiceLog.findMany({
+  const [rawLogs, sharedPoses] = await Promise.all([
+    withUser(userId, (tx) => tx.practiceLog.findMany({
       where: { userId },
       select: {
         id: true,
@@ -25,12 +26,10 @@ export async function getPracticeLogPageData(userId: string) {
         },
       },
       orderBy: { date: "desc" },
-    }),
-    tx.pose.findMany({
-      select: { id: true, name: true, imageUrl: true, categories: true },
-      orderBy: { name: "asc" },
-    }),
-  ]));
+    })),
+    getPoses(),
+  ]);
+  const poses = sharedPoses.toSorted((a, b) => a.name.localeCompare(b.name, "en"));
 
   const logs = rawLogs.map(({ sequenceLogs, ...rest }) => ({
     ...rest,
