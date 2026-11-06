@@ -47,3 +47,8 @@ http-client.env.json
 
 # ide
 .idea/
+
+# Playwright local state and output
+/playwright/.auth/
+/test-results/
+/.pose-cache-test.log
