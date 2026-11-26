@@ -1,6 +1,6 @@
 # Story 18: Cache Shared Pose Data with Cache Components
 
-**Status:** in progress
+**Status:** done
 
 ## Goal
 
@@ -19,7 +19,7 @@ Next.js 16 supports `use cache` with `cacheComponents: true`. Cached queries can
 - [x] Manually verify that tag invalidation refreshes the renamed pose in the library.
 - [x] Document the refresh workflow for pose imports and image updates.
 - [x] Remove the temporary action, button, and local probe flag.
-- [ ] Confirm the original development pose name is restored and verify tag invalidation in the log picker.
+- [x] Confirm the original development pose name is restored and verify tag invalidation in the log picker.
 
 ## Verification
 
@@ -43,7 +43,7 @@ The temporary `/poses` button calls `updateTag("poses")` from a Server Action.
 4. Click **Invalidate pose cache (test)** and confirm the changed name appears. Also check the log pose picker.
 5. Restore the database name and invalidate again. Remove the temporary action, form/import, and local flag after verification.
 
-The user confirmed that the library kept the cached name after the DB edit and displayed the changed name after pressing the button. The temporary action, button, and local flag have been removed. Log-picker invalidation and confirmation of the restored database name are pending.
+The user confirmed that the library kept the cached name after the DB edit and displayed the changed name after pressing the button. The temporary action, button, and local flag have been removed. The user also confirmed tag invalidation in the log picker and restoration of the original database name.
 
 ### Pose-update workflow
 
