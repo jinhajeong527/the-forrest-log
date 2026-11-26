@@ -98,8 +98,11 @@ export default function PoseCard({ name, imageUrl, className, showLabel = true }
 
         {/* Bottom label */}
         {showLabel && (
-          <div className="w-full pt-2 text-center border-t border-foreground/12">
-            <p className="font-cormorant italic text-foreground text-sm tracking-wide leading-tight">
+          <div className="h-12 w-full shrink-0 border-t border-foreground/12 pt-2 text-center">
+            <p
+              title={name}
+              className="line-clamp-2 font-cormorant italic text-foreground text-sm tracking-wide leading-tight"
+            >
               {name}
             </p>
           </div>
