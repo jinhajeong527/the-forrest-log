@@ -57,7 +57,7 @@ export default function PoseCard({ name, imageUrl, className, showLabel = true }
         ))}
 
         {/* Illustration area */}
-        <div className="relative min-h-0 flex-1 w-full">
+        <div className="relative flex-1 w-full">
           {imageUrl ? (
             <Image
               src={imageUrl}
